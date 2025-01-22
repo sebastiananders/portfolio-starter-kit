@@ -7,11 +7,8 @@ export default function Page() {
         In the loop: AI & UX
       </h1>
       <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
+        {`Hi, my name is Sebastian and I am a design lead for an AI start up. 
+        Here I reflect on my daily work and think out loud about design and AI in general`}
       </p>
       <div className="my-8">
         <BlogPosts />
