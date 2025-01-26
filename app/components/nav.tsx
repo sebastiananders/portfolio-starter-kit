@@ -7,9 +7,6 @@ const navItems = {
   '/blog': {
     name: 'blog',
   },
-  'https://sebastiananders.framer.website/': {
-    name: 'work',
-  },
 }
 
 export function Navbar() {
