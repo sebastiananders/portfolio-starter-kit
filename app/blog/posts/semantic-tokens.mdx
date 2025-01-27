@@ -1,0 +1,24 @@
+---
+title: 'From semantic token to a design system component library'
+publishedAt: '2025-01-27'
+summary: 'DeepSeek is the better performing LLM than OpenAI and it is Open Source'
+---
+
+### Intro
+The DesignOps process already utlizes tokens. Primitive tokens like color, typography, etc are being put into a repo. Read more about the process here: [DesignOps: using Tokens with Angular.js](https://sebastiananders.substack.com/p/designops-using-tokens-with-angularjs)
+
+Now that we are introducing a completely overhauled design I was constantly thinking about the devs work-load. They have to build features and new modules and use cases for our clients. With the new design they are too busy handling other tasks. My thinking is to increase pace by co-work with the dev team even more. 
+
+### Primitive && Semantic
+It needs primitive tokens (PT) to have semantic token (ST). They define how components look and behave. Pulling PT from a design file and store them on a repo is easy. What about ST? How do I pull them off of Figma?
+
+Combining these token sets we get component tokens. This is what we want to utilize in our Angular app. How do we do that?
+
+![](https://i.imgur.com/BIq4Kj6.png)
+
+In the last meeting with the dev team I promised to display components and the linked tokens, so that anyone in the dev team can easily implement new components.
+
+![](https://i.imgur.com/Ovf8xOh.png)
+But how do we do that exactly? One solution is Supernova. It takes all the tokens and builds the library for the assets, tokens and components. Gonna test this in the upcoming days. Looks very pomising!
+
+https://www.supernova.io/
