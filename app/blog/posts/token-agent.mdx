@@ -1,0 +1,24 @@
+---
+title: 'Building an token pipeline agent. Day one'
+publishedAt: '2025-01-31'
+summary: 'Join me on my way to build an automated Figma token to Github repo pipeline'
+---
+
+# Token Agent
+When it comes to automation we tend to think about the technical possiblities, rather than the actual use cases. It’s a natural think, since most people thinking about that kind of stuff are tech savyy people. 
+
+Here is my approach to a use case focused agent building:
+
+### The issue
+I have been building a manual process pipeline. It basically does: Figma token export, upload to Github repo, on a specific branch. Nothing else. But it mostly is done by manual activators. (Me doing stuff)
+### What I gonna do
+Here is my plan. I want this to be automated. When I change a variable in our design system I want the agent to acknowledge the changes and create a new token for that change. This tokens then gets checked if everything is fine and then will be uploaded to a specific branch on Github. To conclude this automation I’d like to have the agent sending a message on to the team on Slack, with this particular update.
+
+### What’s next
+Now I dont have much experience in building such agents but how hard can it be? 
+ChatGPT put out a script that promises to do just that.
+It looks like this:
+
+(!)[https://i.imgur.com/J4zC0Rv.png]
+
+Let’s see what the test shows. First I need to gather all the API access token.
