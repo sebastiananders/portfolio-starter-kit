@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   description: 'Sebastian Anders Blog UX & AI',
   openGraph: {
-    title: 'My Portfolio',
+    title: 'Sebastian Anders Blog UX & AI',
     description: 'Sebastian Anders Blog UX & AI',
     url: baseUrl,
     siteName: 'In the loop: AI & UX',
