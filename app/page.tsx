@@ -24,7 +24,7 @@ export default function Page() {
        />
        </div>    
        <p className="mb-2">
-      {`20 years of experience in building digital products for start-ups, scale-ups & enterprise sized companies. I make sure we're building the right thing`}
+      {`With 20 years of experience in building digital products for start-ups, scale-ups & enterprise sized companies, I make sure we're building the right thing`}
       </p>  
       {/* <div className="my-8">
         <BlogPosts />
