@@ -16,7 +16,7 @@ export default function Page() {
       <div className="mb-8">
       <Image
       src="/images/profile.jpg"
-       alt="Sebastian profile"
+       alt="Sebastian (and Mr. Mio) at work, in the kitchen"
        width={500}
        height={500}
        className="rounded-lg"
