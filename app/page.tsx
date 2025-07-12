@@ -1,18 +1,34 @@
 import { BlogPosts } from 'app/components/posts'
+import Image from 'next/image'
 
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tight">
+      {/* <h1 className="mb-8 text-2xl font-semibold">
         In the loop: AI & UX
-      </h1>
+      </h1> */}
       <p className="mb-4">
-        {`Hi, my name is Sebastian. I work at the intersection of AI and Interfacedesign. 
-        Here I reflect on my daily work and think out loud about design and AI in general`}
+        {`Hi, my name is Sebastian 👋🏽` }<br/>
+        {`I am a design led product guy.` }
       </p>
-      <div className="my-8">
+
+              
+      <div className="mb-8">
+      <Image
+      src="/images/profile.jpg"
+       alt="Sebastian profile"
+       width={500}
+       height={500}
+       className="rounded-lg"
+       priority
+       />
+       </div>    
+       <p className="mb-2">
+      {`20 years of experience in building digital products for start-ups, scale-ups & enterprise sized companies. I make sure we're building the right thing`}
+      </p>  
+      {/* <div className="my-8">
         <BlogPosts />
-      </div>
+      </div> */}
     </section>
   )
 }
