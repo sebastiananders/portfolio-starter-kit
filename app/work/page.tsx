@@ -1,3 +1,5 @@
+import { DismissibleInfoBox } from 'app/components/dismissible-info-box'
+
 export default function WorkPage() {
   const projects = [
     {
@@ -31,11 +33,11 @@ export default function WorkPage() {
       {/* <h1 className="mb-8 text-1xl tracking-tighter">
         Work
       </h1> */}
-      <div className="mb-8 p-4 bg-neutral-10 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-lg">
+      <DismissibleInfoBox>
         <p className="text-neutral-700 dark:text-neutral-300 font-medium">
-          As a design led co-founder and product builder my focus is set to projects where I am able to combine my design and product skills with my technical skills.
+          As a design led co-founder and product builder my focus is set to projects where I am able to explore, experiment, design and develop.
         </p>
-      </div>
+      </DismissibleInfoBox>
       
       <div className="space-y-8">
         {projects.map((project, index) => (
