@@ -30,7 +30,7 @@ export default function Page() {
       <div className="mb-8">
         <p>Some companies I recently worked with</p>
         <br></br>
-        <div className="flex gap-8 items-end justify-start">
+        <div className="flex flex-wrap gap-4 md:gap-8 items-end justify-start">
           
         <div className="flex flex-col items-center">
             <Image
@@ -38,7 +38,7 @@ export default function Page() {
               alt="Porsche"
               width={50}
               height={25}
-              className="max-w-[50px] h-auto"
+              className="max-w-[40px] md:max-w-[50px] h-auto"
             />
             <br></br>
             <span>
@@ -51,7 +51,7 @@ export default function Page() {
               alt="IBM"
               width={70}
               height={25}
-              className="max-w-[70px] h-auto"
+              className="max-w-[55px] md:max-w-[70px] h-auto"
             />
             <br></br>
             <span>
@@ -64,7 +64,7 @@ export default function Page() {
               alt="IBM"
               width={70}
               height={25}
-              className="max-w-[70px] h-auto"
+              className="max-w-[55px] md:max-w-[70px] h-auto"
             />
             <br></br>
             <span>
@@ -78,7 +78,7 @@ export default function Page() {
               alt="Sonderform"
               width={50}
               height={25}
-              className="max-w-[50px] h-auto"
+              className="max-w-[40px] md:max-w-[50px] h-auto"
             />
             <br></br>
             <span>
@@ -92,7 +92,7 @@ export default function Page() {
               alt="Deutsche Bahn"
               width={50}
               height={25}
-              className="max-w-[50px] h-auto"
+              className="max-w-[40px] md:max-w-[50px] h-auto"
             />
             <br></br>
             <span>
@@ -105,7 +105,7 @@ export default function Page() {
               alt="Deutsche Bahn"
               width={50}
               height={25}
-              className="max-w-[50px] h-auto"
+              className="max-w-[40px] md:max-w-[50px] h-auto"
             />
             <br></br>
             <span>
