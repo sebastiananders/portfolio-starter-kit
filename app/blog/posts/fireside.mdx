@@ -1,0 +1,27 @@
+---
+title: 'Building Fireside #1'
+publishedAt: '2025-07-23'
+summary: 'Buidling fireside: a live documentation'
+---
+
+Sometimes ideas just come. Like Rick Rubin describes in his book: be open to ideas, they coming from the universe and your antennae need to be enable to receive and CRUD the ideas. So this is me, sitting in the dentists chair. All I can think of is that I am unable to speak. And how much people like to communicate. Its the foundaition of everything.
+
+People on Fireside can anonymously chat with other people on a subchat. Like if you're interested in geopilitcs then you wann join this subchat and talk with others. 
+
+The best part? You'll have a smart bar (name sucks but meh) that is constantly reviewing the chats content and is doing fact checking, data and information delivery and shows links to what is being discussed. Like when people talk about gardening, the smart sidebar shows Amazon links to specific gardening stuff. Dunno - I dont have a green thumb really, but you get the idea.
+
+Now to the fun part: The MVP will be a simple chat interface. From the very start on I need to take special care of the DOMs in the chat. The data Attributes for AI Processing needs to be thpught through from the beginnen. I am thinking of:
+
+- data-message-entities: JSON array of extracted entities (products, stocks, topics)
+- data-message-content: Raw message text for NLP processing
+- data-chat-message="true": Identifies all chat messages for monitoring
+- data-sidebar-action: Tracks user interactions with sidebar elements
+
+The real time entity tracking needs to be able to identify everything that's going on in the chat. The sidebar updates dynamically based on conversation context. The sidebar itself works as a fluid compannion that shows when tech products are mentioned, displays when stocks/companies are discussed and direct buy/info links with tracking attributes. In regards to the contextual information there is a lot to discover really. It could be 
+
+- Wikipedia summaries for topics being discussed
+- News articles related to current conversation topics
+- Weather when locations are mentioned
+- Stock prices when companies are discussed
+
+We will see. 
