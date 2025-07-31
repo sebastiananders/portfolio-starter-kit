@@ -23,9 +23,9 @@ export default function Page() {
        priority
        />
        </div>     */}
-       <p className="mb-2">
-      {`With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing`}
-      </p>  
+      <a target="_blank" href="http://irresistible-actions-338794.framer.app" rel="noopener noreferrer">
+        Online Portfolio
+      </a>  
       <br></br>
       <div className="mb-8">
         <p>Some companies I recently worked with</p>
@@ -41,6 +41,9 @@ export default function Page() {
           <li>Techniker Krankenkasse</li>
         </ul>
       </div>
+      <p className="mb-2">
+      {`With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing`}
+      </p>  
       {/* <div className="my-8">
         <BlogPosts />
       </div> */}
