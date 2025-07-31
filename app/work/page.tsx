@@ -4,6 +4,15 @@ import Image from 'next/image'
 export default function WorkPage() {
   const projects = [
     {
+      title: "Firesite - A dead simple chat app",
+      description: "Super simple, super safe: Chat with people anonoumsly in open and private rooms",
+      year: "2025",
+      link:"https://firesite.club",
+      
+      tech: ["Vercel", "React", "Tailwind", "Railway", "Postgres", "Docker"],
+      image: "/images/firesite_promo.png"
+    },
+    {
       title: "Noema - Chrome extension to decode LinkedIn",
       description: "Make LinkedIn suck a little less. This Chrome extension analyzes LinkedIn posts in real-time, revealing their psychological patterns and philosophical themes. It provides quick insights as you browse and deeper analysis when you want to learn more.",
       year: "2025",

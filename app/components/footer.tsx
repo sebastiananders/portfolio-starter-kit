@@ -40,7 +40,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/hey-sebastian/"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">linkedin</p>
+            <p className="ml-2 h-7">LinkedIn</p>
           </a>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
