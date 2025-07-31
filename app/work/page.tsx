@@ -5,7 +5,7 @@ export default function WorkPage() {
   const projects = [
     {
       title: "Firesite - A dead simple chat app",
-      description: "Super simple, super safe: Chat with people anonoumsly in open and private rooms",
+      description: "Super simple, super safe: Chat with people anonymously - in open and private rooms",
       year: "2025",
       link:"https://firesite.club",
       
