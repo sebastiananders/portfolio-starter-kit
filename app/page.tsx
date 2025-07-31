@@ -41,9 +41,7 @@ export default function Page() {
       <p className="mb-2">
       {`With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing`}
       </p>  
-      <a target="_blank" href="http://irresistible-actions-338794.framer.app" rel="noopener noreferrer">
-        Project portfolio
-      </a> 
+      
       {/* <div className="my-8">
         <BlogPosts />
       </div> */}
