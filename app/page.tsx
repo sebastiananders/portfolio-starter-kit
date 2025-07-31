@@ -25,7 +25,7 @@ export default function Page() {
        </div>     */}       
       <br></br>
       <div className="mb-8">
-        <p>Some companies I recently worked with</p>
+        <p>I've built products for</p>
         <br></br>
         <ul className="text-sm text-gray-400 space-y-1">
           <li>Miele</li>
