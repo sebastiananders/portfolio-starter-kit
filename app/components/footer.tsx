@@ -42,7 +42,7 @@ export default function Footer() {
             <ArrowIcon />
             <p className="ml-2 h-7">LinkedIn</p>
           </a>
-          <a
+          {/* <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,7 +50,7 @@ export default function Footer() {
           >
             <ArrowIcon />
             <p className="ml-2 h-7">Portfolio</p>
-          </a>
+          </a> */}
         </li>       
       </ul>
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
