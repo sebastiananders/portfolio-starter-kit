@@ -12,7 +12,7 @@ export default function Page() {
       </p>
       <p className="mb-4">{`Designer, Developer, Co-Founder` }</p>
 
-      <div className="mb-8">
+      {/* <div className="mb-8">
       <Image
       src="/images/profile.jpg"
        alt="Sebastian (and Mr. Mio) at work, in the kitchen"
@@ -21,8 +21,8 @@ export default function Page() {
        className="rounded-lg"
        priority
        />
-       </div>           
-      <br></br>
+       </div>            */}
+      
       <div className="mb-8">
         <p>I built products for</p>
         <br></br>
