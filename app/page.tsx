@@ -24,7 +24,7 @@ export default function Page() {
        </div>           
       <br></br>
       <div className="mb-8">
-        <p>I've built products for</p>
+        <p>I built products for</p>
         <br></br>
         <ul className="text-sm text-gray-400 space-y-1">
           <li>Miele</li>
@@ -33,7 +33,6 @@ export default function Page() {
           <li>Deutsche Bahn</li>
           <li>BASF</li>
           <li>Bundesministerium der Finanzen</li>
-          <li>Züricher Kantonalbank</li>
           <li>Techniker Krankenkasse</li>
         </ul>
       </div>
