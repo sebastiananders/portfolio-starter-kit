@@ -8,12 +8,11 @@ export default function Page() {
         In the loop: AI & UX
       </h1> */}
       <p className="lg:text-2xl, font-bold">
-        {`Hi, my name is Sebastian 👋🏽` }
+        {`Sebastian Anders` }
       </p>
-      <br/>
-      <p className="mb-4">{`Lead UX architecture design & engineering` }</p>
+      <p className="mb-4">{`Designer, Developer, Co-Founder` }</p>
 
-      {/* <div className="mb-8">
+      <div className="mb-8">
       <Image
       src="/images/profile.jpg"
        alt="Sebastian (and Mr. Mio) at work, in the kitchen"
@@ -22,7 +21,7 @@ export default function Page() {
        className="rounded-lg"
        priority
        />
-       </div>     */}       
+       </div>           
       <br></br>
       <div className="mb-8">
         <p>I've built products for</p>
