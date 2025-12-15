@@ -7,7 +7,7 @@ export default function Page() {
       {/* <h1 className="mb-8 text-2xl font-semibold">
         In the loop: AI & UX
       </h1> */}
-      <p className="lg:text-2xl, font-bold">
+      <p className="lg:text-2xl font-semibold">
         {`Sebastian Anders` }
       </p>
       <p className="mb-4">{`Designer, Developer, Co-Founder` }</p>
