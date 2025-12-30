@@ -10,7 +10,13 @@ export default function Page() {
       <p className="lg:text-2xl font-semibold">
         {`Sebastian Anders` }
       </p>
-      <p className="mb-4">{`Real world design` }</p>
+
+      <p className="mb-2">
+      {`I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations. I know my shit. And I know how bullshit looks like. 
+      With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing. Leave the personas and wireframes behind. It is not helping in today's world. What we need is ready to build production design.`}
+      
+      </p>  
+      {/* <p className="mb-4">{`Real world design` }</p> */}
 
       {/* <div className="mb-8">
       <Image
@@ -24,7 +30,7 @@ export default function Page() {
        </div>            */}
       
       <div className="mb-8">
-        <p>I built products for</p>
+      <p className="mb-4">{`recent clients I worked with` }</p>
         <br></br>
         <ul className="text-sm text-gray-400 space-y-1">
           <li>Miele</li>
@@ -36,11 +42,7 @@ export default function Page() {
           <li>Techniker Krankenkasse</li>
         </ul>
       </div>
-      <p className="mb-2">
-      {`I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations. I know my shit. And I know how bullshit looks like. 
-      With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing. Leave the personas and wireframes behind. It is not helping in today's world. What we need is ready to build production ready design.`}
       
-      </p>  
       
       {/* <div className="my-8">
         <BlogPosts />
