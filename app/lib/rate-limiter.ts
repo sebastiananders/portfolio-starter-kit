@@ -9,11 +9,11 @@ const rateLimitStore = new Map<string, RateLimitEntry>()
 // Clean up old entries every 5 minutes to prevent memory leaks
 setInterval(() => {
   const now = Date.now()
-  for (const [ip, entry] of rateLimitStore.entries()) {
+  Array.from(rateLimitStore.entries()).forEach(([ip, entry]) => {
     if (now > entry.resetTime) {
       rateLimitStore.delete(ip)
     }
-  }
+  })
 }, 5 * 60 * 1000)
 
 export function checkRateLimit(ip: string): {
