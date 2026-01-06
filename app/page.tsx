@@ -15,9 +15,7 @@ export default function Page() {
 
       <p className="mb-2">
       {`The internet is an ever changing space. I am used to change. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of experience I know how to navigate product decisions and create compelling user experiences.
-`}
-      
-      </p>  
+`}</p>  
       {/* <p className="mb-4">{`Real world design` }</p> */}
 
       {/* <div className="mb-8">
@@ -32,7 +30,7 @@ export default function Page() {
        </div>            */}
               <br></br>
 
-      <div className="mb-8">
+      {/* <div className="mb-8">
       <p className="mb-4">{`clients I teamed up with` }</p>
         <ul className="text-sm text-gray-400 space-y-1">
           <li>Miele</li>
@@ -43,7 +41,7 @@ export default function Page() {
           <li>Bundesministerium der Finanzen</li>
           <li>Techniker Krankenkasse</li>
         </ul>
-      </div>
+      </div> */}
 
       <AiChat />
 
