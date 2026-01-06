@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { buildSystemPrompt } from '../../lib/chat-context'
+import { checkRateLimit } from '../../lib/rate-limiter'
 import { NextResponse } from 'next/server'
 
 const anthropic = new Anthropic({
@@ -14,6 +15,36 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Invalid request: messages array required' },
         { status: 400 }
+      )
+    }
+
+    // Get client IP address
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0] ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+
+    // Check rate limit
+    const rateLimit = checkRateLimit(ip)
+
+    if (!rateLimit.allowed) {
+      const resetDate = new Date(rateLimit.resetTime)
+      const minutesUntilReset = Math.ceil((rateLimit.resetTime - Date.now()) / 60000)
+
+      return NextResponse.json(
+        {
+          error: 'Rate limit exceeded',
+          message: `You've reached the message limit (10 per hour). Please try again in ${minutesUntilReset} minutes.`,
+          resetTime: resetDate.toISOString()
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': '10',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': resetDate.toISOString()
+          }
+        }
       )
     }
 
@@ -36,7 +67,16 @@ export async function POST(request: Request) {
 
     const assistantMessage = response.content[0]
     if (assistantMessage.type === 'text') {
-      return NextResponse.json({ message: assistantMessage.text })
+      return NextResponse.json(
+        { message: assistantMessage.text },
+        {
+          headers: {
+            'X-RateLimit-Limit': '10',
+            'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+            'X-RateLimit-Reset': new Date(rateLimit.resetTime).toISOString()
+          }
+        }
+      )
     }
 
     return NextResponse.json(

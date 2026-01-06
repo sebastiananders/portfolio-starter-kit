@@ -21,6 +21,10 @@ export default function AiChat() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showSuggestions, setShowSuggestions] = useState(true)
+  const [rateLimitInfo, setRateLimitInfo] = useState<{
+    remaining: number
+    resetTime: string
+  } | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Auto-scroll to bottom when messages change
@@ -58,7 +62,24 @@ export default function AiChat() {
       const data = await res.json()
 
       if (!res.ok) {
-        throw new Error(data.error || 'Failed to send message')
+        // Check if rate limit error
+        if (res.status === 429) {
+          setError(data.message || 'Rate limit exceeded. Try again later.')
+        } else {
+          throw new Error(data.error || 'Failed to send message')
+        }
+        return
+      }
+
+      // Extract rate limit headers
+      const remaining = res.headers.get('X-RateLimit-Remaining')
+      const resetTime = res.headers.get('X-RateLimit-Reset')
+
+      if (remaining && resetTime) {
+        setRateLimitInfo({
+          remaining: parseInt(remaining),
+          resetTime
+        })
       }
 
       setMessages((prev) => [
@@ -126,6 +147,15 @@ export default function AiChat() {
           >
             Dismiss
           </button>
+        </div>
+      )}
+
+      {/* Rate limit warning */}
+      {rateLimitInfo && rateLimitInfo.remaining <= 3 && (
+        <div className="mb-4 rounded-lg border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 px-4 py-2">
+          <p className="text-xs text-amber-800 dark:text-amber-200">
+            {rateLimitInfo.remaining} {rateLimitInfo.remaining === 1 ? 'message' : 'messages'} remaining this hour
+          </p>
         </div>
       )}
 
