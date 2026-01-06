@@ -1,0 +1,147 @@
+# Professional Profile: Sebastian Anders
+
+## Overview
+- Name: Sebastian Anders
+- Title: UX Designer
+- Experience: 15+ years
+- Location: [Your location]
+- Contact: [LinkedIn/Email if you want to share]
+
+## Professional Philosophy
+
+I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations. I know my shit. And I know how bullshit looks like.
+
+With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing. Leave the personas and wireframes behind. It is not helping in today's world. What we need is ready to build production design.
+
+## Work Experience
+
+### [Current/Most Recent Role]
+**Company:** [Company name]
+**Duration:** [Dates]
+**Role:** [Job title]
+
+Key responsibilities and achievements:
+- [Bullet point 1]
+- [Bullet point 2]
+- [Bullet point 3]
+
+### [Previous Role]
+**Company:** [Company name]
+**Duration:** [Dates]
+**Role:** [Job title]
+
+Key responsibilities and achievements:
+- [Bullet point 1]
+- [Bullet point 2]
+
+[Continue for each role...]
+
+## Key Projects & Case Studies
+
+### Project 1: [Project Name]
+**Client:** [Client name from your list - Miele, Porsche, IBM, Deutsche Bahn, BASF, etc.]
+**Challenge:** [What problem were you solving?]
+**Approach:** [Your methodology and process]
+**Outcome:** [Results and impact]
+**Skills Used:** [Design tools, methodologies]
+
+### Project 2: [Project Name]
+**Client:** [Client name]
+**Challenge:** [Problem description]
+**Approach:** [Your solution]
+**Outcome:** [Results]
+**Skills Used:** [Tools and methods]
+
+### Project 3: [Project Name]
+**Client:** [Client name]
+**Challenge:** [Problem description]
+**Approach:** [Your solution]
+**Outcome:** [Results]
+**Skills Used:** [Tools and methods]
+
+[Continue for 3-5 major projects that showcase your best work...]
+
+## Technical Skills & Tools
+
+### Design Tools
+- [e.g., Figma, Sketch, Adobe XD, InVision]
+- [e.g., Prototyping tools]
+- [e.g., Collaborative design platforms]
+
+### Development Understanding
+- [e.g., HTML/CSS knowledge]
+- [e.g., React/Frontend framework basics]
+- [e.g., Design systems and component libraries]
+
+### Methodologies
+- [e.g., Design Thinking, Lean UX, Design Sprints]
+- [e.g., Agile/Scrum experience]
+- [e.g., User research methods]
+
+### Specializations
+- B2B/B2C product design
+- Enterprise applications
+- Complex feature design
+- Production-ready design
+- AI & UX integration
+- [Other specialized areas]
+
+## Notable Clients
+
+Clients I have teamed up with include:
+- Miele
+- Porsche
+- IBM
+- Deutsche Bahn
+- BASF
+- Bundesministerium der Finanzen (Federal Ministry of Finance)
+- Techniker Krankenkasse
+
+## Blog Highlights & Thought Leadership
+
+[Brief summaries of key blog posts or articles you've written. For example:]
+
+### [Blog Post Title 1]
+[One-paragraph summary of the post and key insights]
+
+### [Blog Post Title 2]
+[One-paragraph summary of the post and key insights]
+
+### [Blog Post Title 3]
+[One-paragraph summary of the post and key insights]
+
+## Additional Information
+
+### Awards & Recognition
+- [Any awards or recognition you've received]
+- [Industry recognition]
+
+### Speaking Engagements
+- [Conferences or events where you've spoken]
+- [Workshops or training you've led]
+
+### Publications
+- [Articles published]
+- [Contributions to design publications]
+
+### Side Projects
+- [Personal projects]
+- [Open source contributions]
+- [Community involvement]
+
+---
+
+**Note:** This is a template file. Fill in the sections above with your actual professional information from your CV, portfolio website, and blog posts. The AI chat will use this information to provide detailed, specific answers about your experience and work.
+
+**Instructions for filling this out:**
+1. Replace all [placeholders] with your actual information
+2. Add more work experience entries as needed
+3. Include 3-5 detailed project case studies
+4. List your actual tools and skills
+5. Add summaries from your blog posts
+6. Include any additional relevant information
+
+**After updating:**
+- Save this file
+- Restart your dev server
+- Test the chat with specific questions about your experience
