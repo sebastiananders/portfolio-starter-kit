@@ -108,7 +108,7 @@ export default function AiChat() {
       </p>
 
       {/* Chat messages */}
-      <div className="border border-neutral-200 dark:border-neutral-800 rounded-lg bg-white dark:bg-black mb-4">
+      {/* <div className="border border-neutral-200 dark:border-neutral-800 rounded-lg bg-white dark:bg-black mb-4"> */}
         <div className="max-h-[400px] overflow-y-auto p-4">
           {messages.length === 0 && !showSuggestions && (
             <p className="text-sm text-neutral-400 text-center py-8">
@@ -135,7 +135,7 @@ export default function AiChat() {
 
           <div ref={messagesEndRef} />
         </div>
-      </div>
+      {/* </div> */}
 
       {/* Error message */}
       {error && (
