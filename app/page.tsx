@@ -14,8 +14,8 @@ export default function Page() {
       <br></br>
 
       <p className="mb-2">
-      {`I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations.
-      With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing. What I do is ready to build production design.`}
+      {`The internet is an ever changing space. I am used to change. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of experience I know how to navigate product decisions and create compelling user experiences.
+`}
       
       </p>  
       {/* <p className="mb-4">{`Real world design` }</p> */}

@@ -19,6 +19,18 @@ That changes what design responsibility looks like.
 
 We’re shaping how systems reason and respond, not just how they appear. The impact is deeper, even as certainty drops.
 
+Empowering design is a wise corporate strategy because designers naturally care about the right things.
+
+Good designers are naturally empathetic to users and have a constant urge to improve and protect the user experience.
+
+That translates into better customer outcomes.
+
+Good designers also understand that products are systems that must be sustainable and can only thrive when resources are abundant.
+
+That translates into design ideas that are growth-oriented and increase the product's commercial value.
+
+Investing in design is probably the easiest way to gain clarity on the objective and avoid fuzzy executions.
+
 ## Work Experience
 
 ### [Current/Most Recent Role]

@@ -5,6 +5,9 @@ import { NextResponse } from 'next/server'
 
 const DEFAULT_MODEL = 'claude-3-5-sonnet-20241022'
 const FALLBACK_MODEL = 'claude-3-5-sonnet-20240620'
+const SECOND_FALLBACK_MODEL = 'claude-3-5-haiku-20241022'
+const LEGACY_SONNET = 'claude-3-sonnet-20240229'
+const LEGACY_HAIKU = 'claude-3-haiku-20240307'
 
 // Normalize model names so deprecated aliases (e.g. "-latest") resolve to a known version
 function resolveModel() {
@@ -68,24 +71,25 @@ export async function POST(request: Request) {
 
     const model = resolveModel()
 
-    let response
+    // Try primary model, then pinned fallbacks when Anthropic returns not_found_error
+    const modelsToTry = [
+      model,
+      DEFAULT_MODEL,
+      FALLBACK_MODEL,
+      SECOND_FALLBACK_MODEL,
+      LEGACY_SONNET,
+      LEGACY_HAIKU
+    ].filter(
+      (value, index, arr) => arr.indexOf(value) === index
+    )
 
-    try {
-      response = await anthropic.messages.create({
-        model,
-        max_tokens: 1024,
-        system: buildSystemPrompt(),
-        messages: messages.map((msg: any) => ({
-          role: msg.role,
-          content: msg.content,
-        })),
-      })
-    } catch (error) {
-      // Retry with a pinned fallback if the requested model is unavailable
-      const apiError = error as { status?: number; error?: { type?: string } }
-      if (apiError?.error?.type === 'not_found_error' && model !== FALLBACK_MODEL) {
+    let response
+    let lastError: unknown
+
+    for (const candidate of modelsToTry) {
+      try {
         response = await anthropic.messages.create({
-          model: FALLBACK_MODEL,
+          model: candidate,
           max_tokens: 1024,
           system: buildSystemPrompt(),
           messages: messages.map((msg: any) => ({
@@ -93,9 +97,24 @@ export async function POST(request: Request) {
             content: msg.content,
           })),
         })
-      } else {
-        throw error
+        break
+      } catch (error) {
+        lastError = error
+        const apiError = error as { status?: number; error?: { type?: string } }
+        const isModelMissing = apiError?.error?.type === 'not_found_error' || apiError?.status === 404
+
+        if (!isModelMissing) {
+          throw error
+        }
+        // Otherwise, keep looping to try next fallback
       }
+    }
+
+    if (!response) {
+      const modelList = modelsToTry.join(', ')
+      const notFoundError =
+        lastError instanceof Error ? lastError.message : 'Requested models were not found'
+      throw new Error(`Anthropic model resolution failed. Tried: ${modelList}. Last error: ${notFoundError}`)
     }
 
     const assistantMessage = response.content[0]
