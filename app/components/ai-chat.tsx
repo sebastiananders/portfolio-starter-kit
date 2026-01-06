@@ -103,9 +103,6 @@ export default function AiChat() {
   return (
     <section className="mt-16 mb-8">
       <h2 className="text-lg font-semibold mb-2">Ask me anything</h2>
-      <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
-        Chat with an AI about my professional experience
-      </p>
 
       {/* Chat messages */}
       {/* <div className="border border-neutral-200 dark:border-neutral-800 rounded-lg bg-white dark:bg-black mb-4"> */}
