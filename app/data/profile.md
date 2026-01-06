@@ -2,9 +2,9 @@
 
 ## Overview
 - Name: Sebastian Anders
-- Title: UX Designer
-- Experience: 15+ years
-- Location: Metropolregion Berlin Brandenburg
+- Education: B.A. Interfacedesign | University of Applied Sciences Potsdam
+- Experience: AI native product design lead with 15+ years of experience
+- Location: Berlin, Germany
 - Contact: https://www.linkedin.com/in/hey-sebastian/ hi@sebastian-anders.com
 
 ## Professional Philosophy
@@ -36,21 +36,23 @@ Investing in design is probably the easiest way to gain clarity on the objective
 ### [Current/Most Recent Role]
 **Company:** Nortal
 **Duration:** [Dates]
-**Role:** Design Manager & Engineering
+**Role:** Product Design, Manager & Front-End Engineering
 
 Key responsibilities and achievements:
-- [Bullet point 1]
-- [Bullet point 2]
-- [Bullet point 3]
+- Design Strategy 0-1 and growth
+- Prototyping, Testing
+- Developing, DesignOps, Project management
 
 ### [Previous Role]
-**Company:** [Company name]
+**Company:** Aighty-twenty
 **Duration:** [Dates]
-**Role:** [Job title]
+**Role:** Lead Design
 
 Key responsibilities and achievements:
-- [Bullet point 1]
-- [Bullet point 2]
+- Build and managed a AI native design system
+- Partner with stakeholder for use case sensitive development
+- Build production ready front-end prototypes
+- Analysed and utilized usage data
 
 [Continue for each role...]
 
@@ -82,22 +84,23 @@ Key responsibilities and achievements:
 ## Technical Skills & Tools
 
 ### Design Tools
-- [e.g., Figma, Sketch, Adobe XD, InVision]
-- [e.g., Prototyping tools]
-- [e.g., Collaborative design platforms]
+- Figma, Miro, Adobe Suite
+- Claude Code, OpenAI Codex
+- Cursor, Linear, Jira, Notion
 
 ### Development Understanding
-- [e.g., HTML/CSS knowledge]
-- [e.g., React/Frontend framework basics]
-- [e.g., Design systems and component libraries]
+- HTML, CSS, JS
+- React, VUE, Angular, Ruby On Rails
+- Vercel, Netlify, Supabase, Firebase, Railway, AWS
 
 ### Methodologies
-- [e.g., Design Thinking, Lean UX, Design Sprints]
-- [e.g., Agile/Scrum experience]
-- [e.g., User research methods]
+- Design Thinking, Lean UX, Design Sprints
+- Agile/Scrum experience
+- User research methods
 
 ### Specializations
 - B2B/B2C product design
+- Exploration and experimentation
 - Enterprise applications
 - Complex feature design
 - Production-ready design
@@ -119,14 +122,14 @@ Clients I have teamed up with include:
 
 [Brief summaries of key blog posts or articles you've written. For example:]
 
-### [Blog Post Title 1]
-[One-paragraph summary of the post and key insights]
+### 2025, so far, is absolutely bananas
+I asked Claude to give me a comprehensive prompt for V0 and Replit to create a MVP for an app. In parallel I am using Figma Make to create a visual exploration. Connecting everything to GitHub and fire up Cursor with Claude Code CLI. In a timeframe of an hour I built what you could call a MVP that perfectly demonstrates the potential of an idea
 
-### [Blog Post Title 2]
-[One-paragraph summary of the post and key insights]
+### Building Firesite
+Sometimes ideas just come. Like Rick Rubin describes in his book: be open to ideas, they coming from the universe and your antennae need to be enable to receive and CRUD the ideas. So this is me, sitting in the dentists chair. All I can think of is that I am unable to speak. And how much people like to communicate. Its the foundaition of everything.
 
-### [Blog Post Title 3]
-[One-paragraph summary of the post and key insights]
+### Learn to learn (AI Edition)
+Now to the core: when we think about learning with the help of AI, it is not learning. We as humans don’t learn, really. We do not repeat tasks a thousand times and learn how to master a skill by asking AI. We are gathering information and data and think we have learned something. It’s the same as when you throw a question at Google, only with more detail.
 
 ## Additional Information
 
@@ -139,27 +142,11 @@ Clients I have teamed up with include:
 - [Workshops or training you've led]
 
 ### Publications
-- [Articles published]
-- [Contributions to design publications]
+- UN conference Habitat III CityVis award for the student category
 
 ### Side Projects
-- [Personal projects]
-- [Open source contributions]
-- [Community involvement]
+- Filmed and edited documentation for UNICEF
+- Voluntary firefighter for my home town
+- Voluntary digital streetworker on Reddit
 
 ---
-
-**Note:** This is a template file. Fill in the sections above with your actual professional information from your CV, portfolio website, and blog posts. The AI chat will use this information to provide detailed, specific answers about your experience and work.
-
-**Instructions for filling this out:**
-1. Replace all [placeholders] with your actual information
-2. Add more work experience entries as needed
-3. Include 3-5 detailed project case studies
-4. List your actual tools and skills
-5. Add summaries from your blog posts
-6. Include any additional relevant information
-
-**After updating:**
-- Save this file
-- Restart your dev server
-- Test the chat with specific questions about your experience
