@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
-import { buildSystemPrompt } from '@/app/lib/chat-context'
+import { buildSystemPrompt } from '../../lib/chat-context'
 import { NextResponse } from 'next/server'
 
 const anthropic = new Anthropic({
