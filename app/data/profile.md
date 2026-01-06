@@ -4,21 +4,27 @@
 - Name: Sebastian Anders
 - Title: UX Designer
 - Experience: 15+ years
-- Location: [Your location]
-- Contact: [LinkedIn/Email if you want to share]
+- Location: Metropolregion Berlin Brandenburg
+- Contact: https://www.linkedin.com/in/hey-sebastian/ hi@sebastian-anders.com
 
 ## Professional Philosophy
 
-I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations. I know my shit. And I know how bullshit looks like.
+I design for solutions. If you ask me to design something I start by designing stuff. Not for A/B nor countless iterations.
 
 With 15+ years of experience in building complex features and products for B2B|B2C companies, I make sure we're building the right thing. Leave the personas and wireframes behind. It is not helping in today's world. What we need is ready to build production design.
+
+We used to design relatively stable artefacts: interfaces, flows, systems we could refine. Now, more and more, the experience is the behaviour of a probabilistic system.
+
+That changes what design responsibility looks like.
+
+We’re shaping how systems reason and respond, not just how they appear. The impact is deeper, even as certainty drops.
 
 ## Work Experience
 
 ### [Current/Most Recent Role]
-**Company:** [Company name]
+**Company:** Nortal
 **Duration:** [Dates]
-**Role:** [Job title]
+**Role:** Design Manager & Engineering
 
 Key responsibilities and achievements:
 - [Bullet point 1]

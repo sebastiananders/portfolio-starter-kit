@@ -3,6 +3,17 @@ import { buildSystemPrompt } from '../../lib/chat-context'
 import { checkRateLimit } from '../../lib/rate-limiter'
 import { NextResponse } from 'next/server'
 
+const DEFAULT_MODEL = 'claude-3-5-sonnet-20241022'
+const FALLBACK_MODEL = 'claude-3-5-sonnet-20240620'
+
+// Normalize model names so deprecated aliases (e.g. "-latest") resolve to a known version
+function resolveModel() {
+  const raw = process.env.ANTHROPIC_MODEL?.trim()
+  if (!raw) return DEFAULT_MODEL
+  if (raw === 'claude-3-5-sonnet-latest') return DEFAULT_MODEL
+  return raw
+}
+
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 })
@@ -55,15 +66,37 @@ export async function POST(request: Request) {
       )
     }
 
-    const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-latest',
-      max_tokens: 1024,
-      system: buildSystemPrompt(),
-      messages: messages.map((msg: any) => ({
-        role: msg.role,
-        content: msg.content,
-      })),
-    })
+    const model = resolveModel()
+
+    let response
+
+    try {
+      response = await anthropic.messages.create({
+        model,
+        max_tokens: 1024,
+        system: buildSystemPrompt(),
+        messages: messages.map((msg: any) => ({
+          role: msg.role,
+          content: msg.content,
+        })),
+      })
+    } catch (error) {
+      // Retry with a pinned fallback if the requested model is unavailable
+      const apiError = error as { status?: number; error?: { type?: string } }
+      if (apiError?.error?.type === 'not_found_error' && model !== FALLBACK_MODEL) {
+        response = await anthropic.messages.create({
+          model: FALLBACK_MODEL,
+          max_tokens: 1024,
+          system: buildSystemPrompt(),
+          messages: messages.map((msg: any) => ({
+            role: msg.role,
+            content: msg.content,
+          })),
+        })
+      } else {
+        throw error
+      }
+    }
 
     const assistantMessage = response.content[0]
     if (assistantMessage.type === 'text') {
@@ -85,9 +118,10 @@ export async function POST(request: Request) {
     )
   } catch (error) {
     console.error('Chat API error:', error)
+    const apiError = error as { status?: number; error?: { message?: string } }
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Something went wrong' },
-      { status: 500 }
+      { error: apiError?.error?.message || (error instanceof Error ? error.message : 'Something went wrong') },
+      { status: typeof apiError?.status === 'number' ? apiError.status : 500 }
     )
   }
 }
