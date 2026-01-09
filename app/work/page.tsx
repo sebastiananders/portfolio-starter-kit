@@ -6,7 +6,7 @@ export default function WorkPage() {
     {
       title: "Stumble - what LinkedIn don't shows",
       description: "Honest stories from real workplaces. Everyone messes up. Talking about it helps.",
-      year: "20256",
+      year: "2026",
       link:"https://stumble.blog",
       
       tech: ["Vercel", "Next.js", "Tailwind", "Prisma", "Postgres"],
