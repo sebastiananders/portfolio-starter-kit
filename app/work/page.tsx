@@ -4,6 +4,15 @@ import Image from 'next/image'
 export default function WorkPage() {
   const projects = [
     {
+      title: "Stumble - what LinkedIn don't shows",
+      description: "Honest stories from real workplaces. Everyone messes up. Talking about it helps.",
+      year: "20256",
+      link:"https://stumble.blog",
+      
+      tech: ["Vercel", "Next.js", "Tailwind", "Prisma", "Postgres"],
+      image: "/images/stumble.png"
+    },
+    {
       title: "Firesite - A dead simple chat app",
       description: "Super simple, super safe: Chat with people anonymously - in open and private rooms",
       year: "2025",
