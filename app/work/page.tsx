@@ -73,7 +73,7 @@ export default function WorkPage() {
       </h1> */}
       <DismissibleInfoBox>
         <p className="text-neutral-700 dark:text-neutral-300 font-medium">
-          As a design led co-founder and product builder my focus is set to projects where I am able to explore, experiment, design and develop.
+          I plan, design, develop and ship. Products and experiements, that answer one or several questions. It's super fun to build products and improve design and code and care for growth.
         </p>
       </DismissibleInfoBox>
       
