@@ -4,6 +4,15 @@ import Image from 'next/image'
 export default function WorkPage() {
   const projects = [
     {
+      title: "Zunder - Learn to spot AI",
+      description: "AI-generated images are everywhere now. Some are obvious, but many are getting harder to spot. Zunder helps you train your eye to catch the subtle signs that give them away.",
+      year: "2026",
+      link:"https://zunder.app",
+      
+      tech: ["Vercel", "Next.js", "Tailwind", "Reddit", "Claude Code"],
+      image: "/images/zunder.png"
+    },
+    {
       title: "Stumble - what LinkedIn don't shows",
       description: "Honest stories from real workplaces. Everyone messes up. Talking about it helps.",
       year: "2026",
