@@ -38,7 +38,7 @@ export default function WorkPage() {
   const hasSkillsWithoutProjects = categorySkills.some(s => s.projectIds.length === 0)
 
   // Filter projects by selected skill or category
-  const displayedProjects = selectedSkill
+  const displayedProjects = selectionMode === 'skills' && selectedSkill
     ? projects.filter(p => {
         const skill = skills.find(s => s.name === selectedSkill)
         return skill?.projectIds.includes(p.id)
@@ -60,12 +60,8 @@ export default function WorkPage() {
         </p>
       </DismissibleInfoBox>
 
-      {/* Skills & Technologies Section */}
+      {/* Filter Section */}
       <div className="mb-8">
-        <h2 className="text-xl font-medium mb-4 text-neutral-900 dark:text-neutral-100">
-          Skills & Technologies
-        </h2>
-
         {/* Selection Mode Toggle */}
         <div className="mb-6">
           <SegmentedControl
@@ -101,28 +97,27 @@ export default function WorkPage() {
           </div>
         )}
 
-        {/* Skills Pills */}
-        <div className="flex flex-wrap gap-2">
-          {(selectionMode === 'categories' 
-            ? filteredSkills 
-            : showAllSkills 
+        {/* Skills Pills - Only show in Skills mode */}
+        {selectionMode === 'skills' && (
+          <div className="flex flex-wrap gap-2">
+            {(showAllSkills 
               ? skills 
               : skills.filter(s => s.projectIds.length > 0)
-          ).map(skill => (
-            <SkillPill
-              key={skill.name}
-              skill={skill}
-              isSelected={selectedSkill === skill.name}
-              onClick={() => setSelectedSkill(
-                selectedSkill === skill.name ? null : skill.name
-              )}
-            />
-          ))}
-        </div>
+            ).map(skill => (
+              <SkillPill
+                key={skill.name}
+                skill={skill}
+                isSelected={selectedSkill === skill.name}
+                onClick={() => setSelectedSkill(
+                  selectedSkill === skill.name ? null : skill.name
+                )}
+              />
+            ))}
+          </div>
+        )}
 
-        {/* Show More/Less Button */}
-        {((selectionMode === 'categories' && hasSkillsWithoutProjects) || 
-          (selectionMode === 'skills' && skills.some(s => s.projectIds.length === 0))) && (
+        {/* Show More/Less Button - Only show in Skills mode */}
+        {selectionMode === 'skills' && skills.some(s => s.projectIds.length === 0) && (
           <button
             onClick={() => setShowAllSkills(!showAllSkills)}
             className="mt-4 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
@@ -135,7 +130,7 @@ export default function WorkPage() {
       {/* Projects Section - now filtered */}
       <div className="border-t border-neutral-200 dark:border-neutral-700 pt-8">
         <h2 className="text-xl font-medium mb-6 text-neutral-900 dark:text-neutral-100">
-          {selectedSkill 
+          {selectionMode === 'skills' && selectedSkill 
             ? `Projects using ${selectedSkill}` 
             : selectionMode === 'categories' && activeCategory !== 'all'
               ? `Projects in ${skillCategories.find(c => c.id === activeCategory)?.label}`
@@ -196,7 +191,7 @@ export default function WorkPage() {
         </div>
 
         {/* Empty state */}
-        {selectedSkill && displayedProjects.length === 0 && (
+        {selectionMode === 'skills' && selectedSkill && displayedProjects.length === 0 && (
           <p className="text-neutral-600 dark:text-neutral-400 text-sm">
             {selectedSkill} is part of my skillset, used in client work and internal projects not shown here.
           </p>
