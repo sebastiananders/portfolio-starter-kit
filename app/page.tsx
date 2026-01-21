@@ -11,10 +11,13 @@ export default function Page() {
       <p className="lg:text-2xl font-semibold">
         {`Sebastian Anders` }
       </p>
+      <p className="lg:text-1xl">
+        {`Design Lead` }
+      </p>
       <br></br>
 
       <p className="mb-2">
-      {`The internet is an ever changing space. I am used to change. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of experience I know how to navigate product decisions and create compelling user experiences.
+      {`The internet is an ever changing space. I am used to change. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of design experience, I know how to navigate product decisions and create compelling user experiences.
 `}</p>  
       {/* <p className="mb-4">{`Real world design` }</p> */}
 
