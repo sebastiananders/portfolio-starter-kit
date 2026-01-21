@@ -6,11 +6,20 @@ import { DismissibleInfoBox } from 'app/components/dismissible-info-box'
 import { projects } from 'app/data/projects'
 import { skills, skillCategories } from 'app/data/skills'
 import { SkillPill } from 'app/components/skill-pill'
+import { SegmentedControl } from 'app/components/segmented-control'
 
 export default function WorkPage() {
+  const [selectionMode, setSelectionMode] = useState<'categories' | 'skills'>('categories')
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
   const [showAllSkills, setShowAllSkills] = useState(false)
+
+  const handleModeChange = (mode: 'categories' | 'skills') => {
+    setSelectionMode(mode)
+    setActiveCategory('all')
+    setSelectedSkill(null)
+    setShowAllSkills(false)
+  }
 
   // Filter skills by category
   let filteredSkills = activeCategory === 'all'
@@ -28,13 +37,19 @@ export default function WorkPage() {
     : skills.filter(s => s.category === activeCategory)
   const hasSkillsWithoutProjects = categorySkills.some(s => s.projectIds.length === 0)
 
-  // Filter projects by selected skill
+  // Filter projects by selected skill or category
   const displayedProjects = selectedSkill
     ? projects.filter(p => {
         const skill = skills.find(s => s.name === selectedSkill)
         return skill?.projectIds.includes(p.id)
       })
-    : projects // Show all projects when no skill selected
+    : selectionMode === 'categories' && activeCategory !== 'all'
+      ? projects.filter(p => {
+          // In categories mode, show projects that use any skill from the selected category
+          const categorySkills = skills.filter(s => s.category === activeCategory)
+          return categorySkills.some(skill => skill.projectIds.includes(p.id))
+        })
+      : projects // Show all projects when no specific selection
 
   return (
     <section>
@@ -51,30 +66,49 @@ export default function WorkPage() {
           Skills & Technologies
         </h2>
 
-        {/* Category Filters */}
-        <div className="mb-4 flex flex-wrap gap-2">
-          {skillCategories.map(category => (
-            <button
-              key={category.id}
-              onClick={() => {
-                setActiveCategory(category.id)
-                setSelectedSkill(null)
-              }}
-              className={`px-3 py-1.5 text-sm rounded transition-all ${
-                activeCategory === category.id
-                  ? 'bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-              }`}
-              aria-label={`Filter by ${category.label}`}
-            >
-              {category.label}
-            </button>
-          ))}
+        {/* Selection Mode Toggle */}
+        <div className="mb-6">
+          <SegmentedControl
+            value={selectionMode}
+            onChange={handleModeChange}
+            options={[
+              { value: 'categories', label: 'Categories' },
+              { value: 'skills', label: 'Skills' }
+            ]}
+          />
         </div>
+
+        {/* Category Filters */}
+        {selectionMode === 'categories' && (
+          <div className="mb-4 flex flex-wrap gap-2">
+            {skillCategories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => {
+                  setActiveCategory(category.id)
+                  setSelectedSkill(null)
+                }}
+                className={`px-3 py-1.5 text-sm rounded transition-all ${
+                  activeCategory === category.id
+                    ? 'bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                }`}
+                aria-label={`Filter by ${category.label}`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Skills Pills */}
         <div className="flex flex-wrap gap-2">
-          {filteredSkills.map(skill => (
+          {(selectionMode === 'categories' 
+            ? filteredSkills 
+            : showAllSkills 
+              ? skills 
+              : skills.filter(s => s.projectIds.length > 0)
+          ).map(skill => (
             <SkillPill
               key={skill.name}
               skill={skill}
@@ -87,7 +121,8 @@ export default function WorkPage() {
         </div>
 
         {/* Show More/Less Button */}
-        {hasSkillsWithoutProjects && (
+        {((selectionMode === 'categories' && hasSkillsWithoutProjects) || 
+          (selectionMode === 'skills' && skills.some(s => s.projectIds.length === 0))) && (
           <button
             onClick={() => setShowAllSkills(!showAllSkills)}
             className="mt-4 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
@@ -100,7 +135,12 @@ export default function WorkPage() {
       {/* Projects Section - now filtered */}
       <div className="border-t border-neutral-200 dark:border-neutral-700 pt-8">
         <h2 className="text-xl font-medium mb-6 text-neutral-900 dark:text-neutral-100">
-          {selectedSkill ? `Projects using ${selectedSkill}` : 'Projects'}
+          {selectedSkill 
+            ? `Projects using ${selectedSkill}` 
+            : selectionMode === 'categories' && activeCategory !== 'all'
+              ? `Projects in ${skillCategories.find(c => c.id === activeCategory)?.label}`
+              : 'Projects'
+          }
         </h2>
 
         <div className="space-y-8">
