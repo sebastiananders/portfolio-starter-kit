@@ -10,11 +10,23 @@ import { SkillPill } from 'app/components/skill-pill'
 export default function WorkPage() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+  const [showAllSkills, setShowAllSkills] = useState(false)
 
   // Filter skills by category
-  const filteredSkills = activeCategory === 'all'
+  let filteredSkills = activeCategory === 'all'
     ? skills
     : skills.filter(s => s.category === activeCategory)
+
+  // Further filter to only show skills with projects, unless showAllSkills is true
+  if (!showAllSkills) {
+    filteredSkills = filteredSkills.filter(s => s.projectIds.length > 0)
+  }
+
+  // Calculate if there are any skills without projects in current category
+  const categorySkills = activeCategory === 'all'
+    ? skills
+    : skills.filter(s => s.category === activeCategory)
+  const hasSkillsWithoutProjects = categorySkills.some(s => s.projectIds.length === 0)
 
   // Filter projects by selected skill
   const displayedProjects = selectedSkill
@@ -73,6 +85,16 @@ export default function WorkPage() {
             />
           ))}
         </div>
+
+        {/* Show More/Less Button */}
+        {hasSkillsWithoutProjects && (
+          <button
+            onClick={() => setShowAllSkills(!showAllSkills)}
+            className="mt-4 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          >
+            {showAllSkills ? 'Show less skills ↑' : 'Show more skills ↓'}
+          </button>
+        )}
       </div>
 
       {/* Projects Section - now filtered */}
