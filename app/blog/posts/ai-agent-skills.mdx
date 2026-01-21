@@ -1,0 +1,36 @@
+---
+title: 'Skills are instruction for AI Agents, nothing more'
+publishedAt: '2026-01-22'
+summary: 'A quick intro on how to work with skills.md'
+---
+
+Let’s quickly get some things out of the way, shall we? After MCPs, Skills are now the hot topic. It is a markdown file that hold instructions for AI agents that do things on their own. To make them more reliable and skilled (hue) we are now using specific skill documents neatly organized in your projects directory structure. The format follows YAML frontmatter and is then followed by markdown. The content is basically everything that helps agents to perform better. Here is an example of how a skill.md looks like:
+
+![Screenshot of a super simple skill.md](https://i.imgur.com/8qKr2iQ.png)
+
+If you're writing about technical topics, include code blocks:
+
+```MD
+name: explain-code
+description: Explains code with visual diagrams and analogies. Use when explaining how code works, teaching about a codebase, or when the user asks "how does this work?"
+---
+
+When explaining code, always include:
+
+1. **Start with an analogy**: Compare the code to something from everyday life
+2. **Draw a diagram**: Use ASCII art to show the flow, structure, or relationships
+3. **Walk through the code**: Explain step-by-step what happens
+4. **Highlight a gotcha**: What's a common mistake or misconception?
+
+Keep explanations conversational. For complex concepts, use multiple analogies.
+```
+[Example from Anthropics Claude Skill Intro](https://code.claude.com/docs/en/skills)
+
+It is recommended to have it segmented by sections. With the content divided into: Step-by-step instructions, examples of inputs and outputs and common edge cases.
+
+The directory can also hold scripts, references, assets and any other stuff that you want to throw at an agent. Ultimate goal is to make it more reliable. When you work with files in subdirectories, Claude Code automatically discovers skills from nested .claude/skills/ directories. For example, if you’re editing a file in packages/frontend/, Claude Code also looks for skills in packages/frontend/.claude/skills/. This supports monorepo setups where packages have their own skills.
+
+One skill.md file should not be larger than 500 lines. Split, if necessary. 
+Once you have created your skill library you can validate each, with the skills-ref reference library.
+
+I did not found any useful tool to actually generate skill.md files. Maybe I quickly build one myself. Let’s see.
