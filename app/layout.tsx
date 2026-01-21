@@ -11,15 +11,15 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Sebastian Anders Blog UX & AI',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Sebastian Anders | Lead Design Engineer',
+    template: '%s | Sebastian Anders',
   },
-  description: 'Sebastian Anders Blog UX & AI',
+  description: 'Lead Design Engineer with 15+ years experience in UX design, product strategy, and full-stack development',
   openGraph: {
-    title: 'Sebastian Anders Blog UX & AI',
-    description: 'Sebastian Anders Blog UX & AI',
+    title: 'Sebastian Anders | Lead Design Engineer',
+    description: 'Lead Design Engineer with 15+ years experience in UX design, product strategy, and full-stack development',
     url: baseUrl,
-    siteName: 'In the loop: AI & UX',
+    siteName: 'Sebastian Anders',
     locale: 'en_US',
     type: 'website',
   },
