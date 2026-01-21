@@ -73,13 +73,16 @@ portfolio-starter-kit/
 │   │   ├── mdx.tsx             # MDX component configuration
 │   │   ├── ai-chat.tsx         # AI chat interface (client)
 │   │   ├── chat-message.tsx    # Message bubbles
-│   │   └── dismissible-info-box.tsx
+│   │   ├── dismissible-info-box.tsx
+│   │   └── skill-pill.tsx      # Interactive skill pill (client)
 │   │
 │   ├── lib/                     # Utilities
 │   │   └── chat-context.ts     # AI context loading
 │   │
 │   ├── data/                    # Content data
-│   │   └── profile.md          # Professional profile for AI
+│   │   ├── profile.md          # Professional profile for AI
+│   │   ├── projects.ts         # Project data (shared)
+│   │   └── skills.ts           # Skills data with project mappings
 │   │
 │   ├── og/                      # Open Graph image generation
 │   ├── rss/                     # RSS feed
@@ -231,9 +234,34 @@ className="rounded-lg border border-neutral-200 dark:border-neutral-800
 - Hover states and transitions
 - Dark mode support
 
-### 5. Work/Portfolio Page
-- Located at `/work`
-- Displays project showcases
+### 5. Work/Portfolio Page (`app/work/page.tsx`)
+**Location:** `/work`
+**Type:** Client component (uses state for interactivity)
+
+**Key Features:**
+- **Interactive Skill Matrix** - 70+ skills organized by category
+- **Category Filtering** - Filter skills by: All, Frontend, Backend, Design, AI Tools, DevOps, Databases, Collaboration
+- **Progressive Disclosure** - "Show more" toggle to hide/reveal skills without portfolio projects
+- **Project Filtering** - Click any skill to filter projects that use it
+- **Evidence-Based Display** - Skills show project count indicators (e.g., Next.js⁴)
+- **Project Showcases** - 7 projects with images, descriptions, tech stacks, and links
+
+**Data Structure:**
+- Projects: Stored in `app/data/projects.ts` (shared data)
+- Skills: Stored in `app/data/skills.ts` with project ID mappings
+- Each skill has: name, category, projectIds array
+
+**State Management:**
+- `activeCategory` - Selected category filter ('all', 'frontend', etc.)
+- `selectedSkill` - Currently selected skill for project filtering
+- `showAllSkills` - Toggle for showing/hiding skills without projects
+
+**User Flow:**
+1. Page loads with skills that have portfolio projects visible
+2. Click category button to filter skills by type
+3. Click skill pill to filter projects using that skill
+4. Click "Show more skills ↓" to reveal all skills (including those without projects)
+5. Click "Show less skills ↑" to return to evidence-based view
 
 ## API Routes
 
@@ -316,6 +344,72 @@ className="rounded-lg border border-neutral-200 dark:border-neutral-800
 **Usage:** Read by `chat-context.ts` and included in Claude's system prompt
 
 **Status:** Template exists, needs to be filled with actual content
+
+### `app/data/projects.ts`
+**Purpose:** Shared project data for work page and skill matrix
+
+**Interface:**
+```typescript
+export interface Project {
+  id: string          // Unique identifier (e.g., 'zunder', 'stumble')
+  title: string
+  description: string
+  year: string
+  location?: string
+  link?: string
+  tech: string[]     // Technologies used
+  image?: string
+}
+```
+
+**Contains:** 7 portfolio projects with full details
+
+### `app/data/skills.ts`
+**Purpose:** Skills data with project mappings for skill matrix
+
+**Interfaces:**
+```typescript
+export interface SkillCategory {
+  id: string
+  label: string
+  description: string
+}
+
+export interface Skill {
+  name: string
+  category: 'frontend' | 'backend' | 'design' | 'ai' | 'devops' | 'database' | 'collaboration'
+  projectIds: string[]  // References to project IDs
+}
+```
+
+**Contains:**
+- 8 skill categories (All, Frontend, Backend, Design, AI Tools, DevOps, Databases, Collaboration)
+- 70+ skills with project mappings
+- Skills without projects have empty projectIds array
+
+**Usage:** Imported by work page for skill matrix functionality
+
+### `app/components/skill-pill.tsx`
+**Purpose:** Reusable interactive skill button component
+
+**Type:** Client component
+
+**Features:**
+- Displays skill name with optional project count superscript
+- Click handler for selection
+- Active/inactive states with visual feedback
+- Hover states
+- Dark mode support
+- ARIA labels for accessibility
+
+**Props:**
+```typescript
+{
+  skill: { name: string; projectIds: string[] }
+  isSelected: boolean
+  onClick: () => void
+}
+```
 
 ### `app/global.css`
 **Contains:**
@@ -444,6 +538,18 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 2. Add YAML frontmatter
 3. Write content
 
+### Adding a New Project to Work Page
+1. Add project to `app/data/projects.ts`
+2. Include unique `id` field (used for skill mappings)
+3. Update `app/data/skills.ts` to reference new project ID in relevant skills' `projectIds` arrays
+4. Project will automatically appear on work page
+
+### Adding a New Skill
+1. Add skill to `app/data/skills.ts`
+2. Assign appropriate category
+3. Map to project IDs in `projectIds` array (empty array if no portfolio examples)
+4. Skill will appear in matrix, hidden by default if no projects
+
 ## Design Philosophy
 
 ### Sebastian's Approach
@@ -524,6 +630,11 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 - [ ] Blog listing displays posts
 - [ ] Individual blog posts render
 - [ ] Navigation highlights active page
+- [ ] Work page skill matrix displays
+- [ ] Skill category filtering works
+- [ ] Skill selection filters projects
+- [ ] "Show more/less" toggle works
+- [ ] Project count indicators accurate
 - [ ] Mobile responsive (375px, 768px, 1024px)
 - [ ] Forms validate and submit
 - [ ] Error states display properly
@@ -539,7 +650,7 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 ### High Priority
 - Fill out `profile.md` with actual content
 - Add more blog posts
-- Expand work/portfolio page
+- Add more projects to work page
 
 ### Medium Priority
 - Streaming responses for AI chat
@@ -588,6 +699,18 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 
 ---
 
-**Last Updated:** 2026-01-06
-**Version:** 1.0
+**Last Updated:** 2026-01-21
+**Version:** 1.1
 **Status:** Active Development
+
+## Recent Changes (v1.1)
+
+### Skill Matrix Feature (2026-01-21)
+- Added interactive skill matrix to work page
+- 70+ skills organized by 8 categories
+- Progressive disclosure: "Show more" toggle for skills without projects
+- Project filtering by selected skill
+- Evidence-based display with project count indicators
+- Shared data architecture: `app/data/projects.ts` and `app/data/skills.ts`
+- New reusable `SkillPill` component
+- Fully responsive and accessible design
