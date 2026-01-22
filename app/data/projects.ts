@@ -7,6 +7,7 @@ export interface Project {
   link?: string
   tech: string[]
   image?: string
+  categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
 }
 
 export const projects: Project[] = [
@@ -17,7 +18,8 @@ export const projects: Project[] = [
     year: "2026",
     link: "https://zunder.app",
     tech: ["Vercel", "Next.js", "Tailwind", "Reddit", "Claude Code"],
-    image: "/images/zunder.png"
+    image: "/images/zunder.png",
+    categories: ["Design", "Engineering", "Experiment"]
   },
   {
     id: 'stumble',
@@ -26,7 +28,8 @@ export const projects: Project[] = [
     year: "2026",
     link: "https://stumble.blog",
     tech: ["Vercel", "Next.js", "Tailwind", "Prisma", "Postgres"],
-    image: "/images/stumble.png"
+    image: "/images/stumble.png",
+    categories: ["Design", "Engineering"]
   },
   {
     id: 'firesite',
@@ -35,7 +38,8 @@ export const projects: Project[] = [
     year: "2025",
     link: "https://firesite.club",
     tech: ["Vercel", "React", "Tailwind", "Railway", "Postgres", "Docker"],
-    image: "/images/firesite_promo.png"
+    image: "/images/firesite_promo.png",
+    categories: ["Design", "Engineering"]
   },
   {
     id: 'noema',
@@ -44,7 +48,8 @@ export const projects: Project[] = [
     year: "2025",
     link: "https://noema-app.com",
     tech: ["Chrome Dev Tools", "Next.js", "Claude Code"],
-    image: "/images/676shots_so.png"
+    image: "/images/676shots_so.png",
+    categories: ["Design", "Engineering", "Experiment"]
   },
   {
     id: 'ava',
@@ -53,7 +58,8 @@ export const projects: Project[] = [
     year: "2024-25",
     location: "Zurich",
     tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
-    image: "/images/536shots_so.png"
+    image: "/images/536shots_so.png",
+    categories: ["Design", "Engineering", "Prototyping"]
   },
   {
     id: 'identity',
@@ -62,7 +68,8 @@ export const projects: Project[] = [
     year: "2025",
     location: "Berlin",
     tech: ["Figma", "Claude", "ChatGPT", "Cursor", "xCode"],
-    image: "/images/identity.png"
+    image: "/images/identity.png",
+    categories: ["Design", "Prototyping"]
   },
   {
     id: 'factory',
@@ -71,6 +78,7 @@ export const projects: Project[] = [
     year: "2023-24",
     location: "Hamburg",
     tech: ["K8s", "Docker", "Figma", "Storybook", "Dovetail"],
-    image: "/images/548shots_so.png"
+    image: "/images/548shots_so.png",
+    categories: ["Design", "Engineering"]
   }
 ]

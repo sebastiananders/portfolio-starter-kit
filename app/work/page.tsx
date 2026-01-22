@@ -4,28 +4,17 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { DismissibleInfoBox } from 'app/components/dismissible-info-box'
 import { projects } from 'app/data/projects'
-import { technologies } from 'app/data/technologies'
-import { TechnologyPill } from 'app/components/technology-pill'
+
+const categories = ['All', 'Design', 'Prototyping', 'Engineering', 'Experiment'] as const
+type Category = typeof categories[number]
 
 export default function WorkPage() {
-  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null)
-  const [showAllTechnologies, setShowAllTechnologies] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState<Category>('All')
 
-  // Filter technologies to show only those with projects, unless showAllTechnologies is true
-  const displayedTechnologies = showAllTechnologies 
-    ? technologies 
-    : technologies.filter(t => t.projectIds.length > 0)
-
-  // Check if there are any technologies without projects
-  const hasTechnologiesWithoutProjects = technologies.some(t => t.projectIds.length === 0)
-
-  // Filter projects by selected technology
-  const displayedProjects = selectedTechnology
-    ? projects.filter(p => {
-        const technology = technologies.find(t => t.name === selectedTechnology)
-        return technology?.projectIds.includes(p.id)
-      })
-    : projects // Show all projects when no technology selected
+  // Filter projects by selected category
+  const displayedProjects = selectedCategory === 'All'
+    ? projects
+    : projects.filter(p => p.categories.includes(selectedCategory as any))
 
   return (
     <section>
@@ -36,37 +25,30 @@ export default function WorkPage() {
         </p>
       </DismissibleInfoBox>
 
-      {/* Technologies Section */}
+      {/* Category Navigation */}
       <div className="mb-8">
-        {/* Technology Pills */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {displayedTechnologies.map(technology => (
-            <TechnologyPill
-              key={technology.name}
-              technology={technology}
-              isSelected={selectedTechnology === technology.name}
-              onClick={() => setSelectedTechnology(
-                selectedTechnology === technology.name ? null : technology.name
-              )}
-            />
+        <div className="flex flex-wrap gap-2">
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-3 py-1.5 text-sm rounded transition-all ${
+                selectedCategory === category
+                  ? 'bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black'
+                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+              }`}
+              aria-label={`Filter by ${category}`}
+            >
+              {category}
+            </button>
           ))}
         </div>
-
-        {/* Show More/Less Button */}
-        {hasTechnologiesWithoutProjects && (
-          <button
-            onClick={() => setShowAllTechnologies(!showAllTechnologies)}
-            className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
-          >
-            {showAllTechnologies ? 'Show less technologies ↑' : 'Show more technologies ↓'}
-          </button>
-        )}
       </div>
 
       {/* Projects Section - now filtered */}
       <div className="border-t border-neutral-200 dark:border-neutral-700 pt-8">
         <h2 className="text-xl font-medium mb-6 text-neutral-900 dark:text-neutral-100">
-          {selectedTechnology ? `Projects using ${selectedTechnology}` : 'Projects'}
+          {selectedCategory === 'All' ? 'Projects' : `${selectedCategory} Projects`}
         </h2>
 
         <div className="space-y-8">
@@ -122,9 +104,9 @@ export default function WorkPage() {
         </div>
 
         {/* Empty state */}
-        {selectedTechnology && displayedProjects.length === 0 && (
+        {selectedCategory !== 'All' && displayedProjects.length === 0 && (
           <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-            {selectedTechnology} is part of my toolkit, used in client work and internal projects not shown here.
+            No projects found in the {selectedCategory} category.
           </p>
         )}
       </div>
