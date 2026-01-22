@@ -27,9 +27,11 @@ export default function AiChat() {
   } | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  // Auto-scroll to bottom when messages change
+  // Auto-scroll to bottom when messages change (only if there are messages)
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (messages.length > 0) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
   }, [messages, isLoading])
 
   async function handleSubmit(e: React.FormEvent, customMessage?: string) {
