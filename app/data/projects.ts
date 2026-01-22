@@ -29,7 +29,7 @@ export const projects: Project[] = [
     link: "https://stumble.blog",
     tech: ["Vercel", "Next.js", "Tailwind", "Prisma", "Postgres"],
     image: "/images/stumble.png",
-    categories: ["Design", "Engineering"]
+    categories: ["Engineering", "Experiment"]
   },
   {
     id: 'firesite',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     link: "https://firesite.club",
     tech: ["Vercel", "React", "Tailwind", "Railway", "Postgres", "Docker"],
     image: "/images/firesite_promo.png",
-    categories: ["Design", "Engineering"]
+    categories: ["Design", "Prototyping", "Engineering"]
   },
   {
     id: 'noema',
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     location: "Zurich",
     tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
     image: "/images/536shots_so.png",
-    categories: ["Design", "Engineering", "Prototyping"]
+    categories: ["Design", "Prototyping"]
   },
   {
     id: 'identity',
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     location: "Berlin",
     tech: ["Figma", "Claude", "ChatGPT", "Cursor", "xCode"],
     image: "/images/identity.png",
-    categories: ["Design", "Prototyping"]
+    categories: ["Design", "Experiment"]
   },
   {
     id: 'factory',
