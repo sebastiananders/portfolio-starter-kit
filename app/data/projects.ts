@@ -5,6 +5,7 @@ export interface Project {
   year: string
   location?: string
   link?: string
+  caseStudyLink?: string
   tech: string[]
   image?: string
   categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
@@ -59,7 +60,8 @@ export const projects: Project[] = [
     location: "Zurich",
     tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
     image: "/images/536shots_so.png",
-    categories: ["Design", "Prototyping"]
+    categories: ["Design", "Prototyping"],
+    caseStudyLink: "https://sebastian-anders.framer.website/ava"
   },
   {
     id: 'identity',
@@ -79,6 +81,7 @@ export const projects: Project[] = [
     location: "Hamburg",
     tech: ["K8s", "Docker", "Figma", "Storybook", "Dovetail"],
     image: "/images/548shots_so.png",
-    categories: ["Design", "Prototyping"]
+    categories: ["Design", "Prototyping"],
+    caseStudyLink: "https://sebastian-anders.framer.website/cybus"
   }
 ]

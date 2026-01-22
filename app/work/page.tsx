@@ -87,16 +87,28 @@ export default function WorkPage() {
                   </span>
                 ))}
               </div>
-              {project.link && (
-                <div className="flex mt-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 underline transition-colors"
-                  >
-                    {project.link}
-                  </a>
+              {(project.link || project.caseStudyLink) && (
+                <div className="flex gap-4 mt-4">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 underline transition-colors"
+                    >
+                      {project.link}
+                    </a>
+                  )}
+                  {project.caseStudyLink && (
+                    <a
+                      href={project.caseStudyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 underline transition-colors"
+                    >
+                      Case Study
+                    </a>
+                  )}
                 </div>
               )}
             </div>
