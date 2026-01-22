@@ -13,6 +13,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'ava',
+    title: "AVA - Gen AI Content Platform",
+    description: "Use case sensitiv content generation platform for AI agents. Researched market fit, developed the product strategy, built & managed the AVA design system, front-end library and design tokens.",
+    year: "2024-25",
+    location: "Zurich",
+    tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
+    image: "/images/536shots_so.png",
+    categories: ["Design", "Prototyping"],
+    caseStudyLink: "https://sebastian-anders.framer.website/ava"
+  },
+  {
     id: 'zunder',
     title: "Zunder - Learn to spot AI",
     description: "AI-generated images are everywhere now. Some are obvious, but many are getting harder to spot. Zunder helps you train your eye to catch the subtle signs that give them away.",
@@ -53,17 +64,6 @@ export const projects: Project[] = [
     categories: ["Prototyping", "Engineering"]
   },
   {
-    id: 'ava',
-    title: "AVA - Gen AI Content Platform",
-    description: "Use case sensitiv content generation platform for AI agents. Researched market fit, developed the product strategy, built & managed the AVA design system, front-end library and design tokens.",
-    year: "2024-25",
-    location: "Zurich",
-    tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
-    image: "/images/536shots_so.png",
-    categories: ["Design", "Prototyping"],
-    caseStudyLink: "https://sebastian-anders.framer.website/ava"
-  },
-  {
     id: 'identity',
     title: "Identity - Watch your data shared across the web",
     description: "Watch and manage your personal data, as it makes it way through the web. iPhone app design exploration for personal data distribution management.",
@@ -83,5 +83,15 @@ export const projects: Project[] = [
     image: "/images/548shots_so.png",
     categories: ["Design", "Prototyping"],
     caseStudyLink: "https://sebastian-anders.framer.website/cybus"
+  },
+  {
+    id: 'skytale',
+    title: "Skytale",
+    description: "UI audit & re-design study for a crypto-currency management app. Cleaner and information driven content display with lighter colors and a special focus on typography",
+    year: "2025",
+    tech: ["Figma", "UI Design", "Typography", "Color Theory"],
+    image: "/images/skytale_promo.png",
+    categories: ["Design", "Prototyping"],
+    caseStudyLink: "https://irresistible-actions-338794.framer.app/skytale"
   }
 ]
