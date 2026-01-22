@@ -4,52 +4,28 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { DismissibleInfoBox } from 'app/components/dismissible-info-box'
 import { projects } from 'app/data/projects'
-import { skills, skillCategories } from 'app/data/skills'
-import { SkillPill } from 'app/components/skill-pill'
-import { SegmentedControl } from 'app/components/segmented-control'
+import { technologies } from 'app/data/technologies'
+import { TechnologyPill } from 'app/components/technology-pill'
 
 export default function WorkPage() {
-  const [selectionMode, setSelectionMode] = useState<'categories' | 'skills'>('categories')
-  const [activeCategory, setActiveCategory] = useState('all')
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
-  const [showAllSkills, setShowAllSkills] = useState(false)
+  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null)
+  const [showAllTechnologies, setShowAllTechnologies] = useState(false)
 
-  const handleModeChange = (mode: 'categories' | 'skills') => {
-    setSelectionMode(mode)
-    setActiveCategory('all')
-    setSelectedSkill(null)
-    setShowAllSkills(false)
-  }
+  // Filter technologies to show only those with projects, unless showAllTechnologies is true
+  const displayedTechnologies = showAllTechnologies 
+    ? technologies 
+    : technologies.filter(t => t.projectIds.length > 0)
 
-  // Filter skills by category
-  let filteredSkills = activeCategory === 'all'
-    ? skills
-    : skills.filter(s => s.category === activeCategory)
+  // Check if there are any technologies without projects
+  const hasTechnologiesWithoutProjects = technologies.some(t => t.projectIds.length === 0)
 
-  // Further filter to only show skills with projects, unless showAllSkills is true
-  if (!showAllSkills) {
-    filteredSkills = filteredSkills.filter(s => s.projectIds.length > 0)
-  }
-
-  // Calculate if there are any skills without projects in current category
-  const categorySkills = activeCategory === 'all'
-    ? skills
-    : skills.filter(s => s.category === activeCategory)
-  const hasSkillsWithoutProjects = categorySkills.some(s => s.projectIds.length === 0)
-
-  // Filter projects by selected skill or category
-  const displayedProjects = selectionMode === 'skills' && selectedSkill
+  // Filter projects by selected technology
+  const displayedProjects = selectedTechnology
     ? projects.filter(p => {
-        const skill = skills.find(s => s.name === selectedSkill)
-        return skill?.projectIds.includes(p.id)
+        const technology = technologies.find(t => t.name === selectedTechnology)
+        return technology?.projectIds.includes(p.id)
       })
-    : selectionMode === 'categories' && activeCategory !== 'all'
-      ? projects.filter(p => {
-          // In categories mode, show projects that use any skill from the selected category
-          const categorySkills = skills.filter(s => s.category === activeCategory)
-          return categorySkills.some(skill => skill.projectIds.includes(p.id))
-        })
-      : projects // Show all projects when no specific selection
+    : projects // Show all projects when no technology selected
 
   return (
     <section>
@@ -60,69 +36,29 @@ export default function WorkPage() {
         </p>
       </DismissibleInfoBox>
 
-      {/* Filter Section */}
+      {/* Technologies Section */}
       <div className="mb-8">
-        {/* Selection Mode Toggle */}
-        <div className="mb-6">
-          <SegmentedControl
-            value={selectionMode}
-            onChange={handleModeChange}
-            options={[
-              { value: 'categories', label: 'Categories' },
-              { value: 'skills', label: 'Skills' }
-            ]}
-          />
+        {/* Technology Pills */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {displayedTechnologies.map(technology => (
+            <TechnologyPill
+              key={technology.name}
+              technology={technology}
+              isSelected={selectedTechnology === technology.name}
+              onClick={() => setSelectedTechnology(
+                selectedTechnology === technology.name ? null : technology.name
+              )}
+            />
+          ))}
         </div>
 
-        {/* Category Filters */}
-        {selectionMode === 'categories' && (
-          <div className="mb-4 flex flex-wrap gap-2">
-            {skillCategories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => {
-                  setActiveCategory(category.id)
-                  setSelectedSkill(null)
-                }}
-                className={`px-3 py-1.5 text-sm rounded transition-all ${
-                  activeCategory === category.id
-                    ? 'bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black'
-                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-                }`}
-                aria-label={`Filter by ${category.label}`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Skills Pills - Only show in Skills mode */}
-        {selectionMode === 'skills' && (
-          <div className="flex flex-wrap gap-2">
-            {(showAllSkills 
-              ? skills 
-              : skills.filter(s => s.projectIds.length > 0)
-            ).map(skill => (
-              <SkillPill
-                key={skill.name}
-                skill={skill}
-                isSelected={selectedSkill === skill.name}
-                onClick={() => setSelectedSkill(
-                  selectedSkill === skill.name ? null : skill.name
-                )}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Show More/Less Button - Only show in Skills mode */}
-        {selectionMode === 'skills' && skills.some(s => s.projectIds.length === 0) && (
+        {/* Show More/Less Button */}
+        {hasTechnologiesWithoutProjects && (
           <button
-            onClick={() => setShowAllSkills(!showAllSkills)}
-            className="mt-4 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            onClick={() => setShowAllTechnologies(!showAllTechnologies)}
+            className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
           >
-            {showAllSkills ? 'Show less skills ↑' : 'Show more skills ↓'}
+            {showAllTechnologies ? 'Show less technologies ↑' : 'Show more technologies ↓'}
           </button>
         )}
       </div>
@@ -130,12 +66,7 @@ export default function WorkPage() {
       {/* Projects Section - now filtered */}
       <div className="border-t border-neutral-200 dark:border-neutral-700 pt-8">
         <h2 className="text-xl font-medium mb-6 text-neutral-900 dark:text-neutral-100">
-          {selectionMode === 'skills' && selectedSkill 
-            ? `Projects using ${selectedSkill}` 
-            : selectionMode === 'categories' && activeCategory !== 'all'
-              ? `Projects in ${skillCategories.find(c => c.id === activeCategory)?.label}`
-              : 'Projects'
-          }
+          {selectedTechnology ? `Projects using ${selectedTechnology}` : 'Projects'}
         </h2>
 
         <div className="space-y-8">
@@ -191,9 +122,9 @@ export default function WorkPage() {
         </div>
 
         {/* Empty state */}
-        {selectionMode === 'skills' && selectedSkill && displayedProjects.length === 0 && (
+        {selectedTechnology && displayedProjects.length === 0 && (
           <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-            {selectedSkill} is part of my skillset, used in client work and internal projects not shown here.
+            {selectedTechnology} is part of my toolkit, used in client work and internal projects not shown here.
           </p>
         )}
       </div>
