@@ -19,7 +19,7 @@ export const projects: Project[] = [
     link: "https://zunder.app",
     tech: ["Vercel", "Next.js", "Tailwind", "Reddit", "Claude Code"],
     image: "/images/zunder.png",
-    categories: ["Design", "Engineering", "Experiment"]
+    categories: ["Engineering", "Experiment"]
   },
   {
     id: 'stumble',
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     link: "https://noema-app.com",
     tech: ["Chrome Dev Tools", "Next.js", "Claude Code"],
     image: "/images/676shots_so.png",
-    categories: ["Design", "Engineering", "Experiment"]
+    categories: ["Prototyping", "Engineering"]
   },
   {
     id: 'ava',
@@ -79,6 +79,6 @@ export const projects: Project[] = [
     location: "Hamburg",
     tech: ["K8s", "Docker", "Figma", "Storybook", "Dovetail"],
     image: "/images/548shots_so.png",
-    categories: ["Design", "Engineering"]
+    categories: ["Design", "Prototyping"]
   }
 ]
