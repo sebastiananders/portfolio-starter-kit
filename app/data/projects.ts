@@ -14,12 +14,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'MechOS',
-    title: "Agent Orchestration Platform",
-    description: "Challenging the current, scattered state of control. With the computer now running on its own, people might feel the need to see what's going on. (At least nerds like me)",
+    title: "Agent Orchestration on iOS",
+    description: "Challenging the current, scattered state of control with MechOS. With the computer now running on its own, people might feel the need to see what's going on. (At least nerds like me)",
     year: "2026",
     location: "Berlin",
     tech: ["Figma", "Mobbin", "Claude Code"],
-    image: "https://i.imgur.com/YX1crYE.png",
+    image: "/images/mechOS.png",
     categories: ["Design"],
   },
   {
