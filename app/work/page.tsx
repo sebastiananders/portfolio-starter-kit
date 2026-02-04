@@ -87,7 +87,7 @@ export default function WorkPage() {
                   </span>
                 ))}
               </div>
-              {(project.link || project.caseStudyLink) && (
+              {(project.link || project.caseStudyLink || project.figmaLink) && (
                 <div className="flex gap-4 mt-4">
                   {project.link && (
                     <a
@@ -107,6 +107,16 @@ export default function WorkPage() {
                       className="text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 underline transition-colors"
                     >
                       Case Study
+                    </a>
+                  )}
+                  {project.figmaLink && (
+                    <a
+                      href={project.figmaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 underline transition-colors"
+                    >
+                      Figma Link
                     </a>
                   )}
                 </div>

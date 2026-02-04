@@ -6,6 +6,7 @@ export interface Project {
   location?: string
   link?: string
   caseStudyLink?: string
+  figmaLink?: string
   tech: string[]
   image?: string
   categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
@@ -21,7 +22,7 @@ export const projects: Project[] = [
     tech: ["Figma", "Mobbin", "Claude Code"],
     image: "/images/507_1x_shots_so.png",
     categories: ["Design"],
-    caseStudyLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
+    figmaLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
   },
   {
     id: 'ava',
