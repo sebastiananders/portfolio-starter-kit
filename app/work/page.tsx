@@ -19,7 +19,7 @@ export default function WorkPage() {
   return (
     <section>
       {/* Existing intro box */}
-      <DismissibleInfoBox>
+      <DismissibleInfoBox id="work">
         <p className="text-neutral-700 dark:text-neutral-300 font-medium">
           I plan, design, develop and ship. Products and experiements, that answer one or several questions. It's super fun to build products and improve design and code and care for growth.
         </p>

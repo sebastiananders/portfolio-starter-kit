@@ -9,7 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <section>
-      <DismissibleInfoBox>
+      <DismissibleInfoBox id="blog">
         <p className="text-neutral-700 dark:text-neutral-300 font-medium">
           Writing about my learnings and experiences. Smaller posts on design, product and AI. Often thinking out loud. Nothings special - just some mental off loading.
         </p>
