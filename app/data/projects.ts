@@ -19,7 +19,7 @@ export const projects: Project[] = [
     year: "2026",
     location: "Berlin",
     tech: ["Figma", "Mobbin", "Claude Code"],
-    image: "/images/mechOS.png",
+    image: "/images/919_1x_shots_so.png",
     categories: ["Design"],
   },
   {
