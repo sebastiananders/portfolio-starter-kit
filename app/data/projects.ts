@@ -13,6 +13,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'MechOS',
+    title: "Agent Orchestration Platform",
+    description: "Challenging the current, scattered state of control. With the computer now running on its own, people might feel the need to see what's going on. (At least nerds like me)",
+    year: "2026",
+    location: "Berlin",
+    tech: ["Figma", "Mobbin", "Claude Code"],
+    image: "https://i.imgur.com/YX1crYE.png",
+    categories: ["Design"],
+  },
+  {
     id: 'ava',
     title: "AVA - Gen AI Content Platform",
     description: "Use case sensitiv content generation platform for AI agents. Researched market fit, developed the product strategy, built & managed the AVA design system, front-end library and design tokens.",
