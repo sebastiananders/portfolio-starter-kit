@@ -19,8 +19,9 @@ export const projects: Project[] = [
     year: "2026",
     location: "Berlin",
     tech: ["Figma", "Mobbin", "Claude Code"],
-    image: "/images/919_1x_shots_so.png",
+    image: "/images/507_1x_shots_so.png",
     categories: ["Design"],
+    caseStudyLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
   },
   {
     id: 'ava',
