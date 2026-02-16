@@ -16,7 +16,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-2">
-      {`Hands-on product design & prototyping. I focus on top notch (huehue) user interface design for max business impact. I align product decisions with constant experiments, to get the best results.
+      {`Hands-on product design & prototyping. I focus on top notch user interface design for max business impact, by aligning product decisions with constant experiments.
 `}</p>  
       {/* <p className="mb-3">
       {`The internet is an ever changing space. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of design experience, I know how to navigate product decisions and create compelling user experiences.
