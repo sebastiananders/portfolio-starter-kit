@@ -12,11 +12,11 @@ export default function Page() {
         {`Sebastian Anders` }
       </p>
       <p className="lg:text-1xl text-neutral-600 dark:text-neutral-400">
-        {`From AI slop to A-class production ready design` }
+        {`Interfacedesigner with 15+ years of experience` }
       </p>
       <br></br>
       <p className="mb-2">
-      {`Hands-on product design & prototyping. I focus on top notch user interface design for max business impact. I align clear product decisions with constant experiments, to get the best results.
+      {`Hands-on product design & prototyping. I focus on top notch (huehue) user interface design for max business impact. I align product decisions with constant experiments, to get the best results.
 `}</p>  
       {/* <p className="mb-3">
       {`The internet is an ever changing space. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of design experience, I know how to navigate product decisions and create compelling user experiences.
