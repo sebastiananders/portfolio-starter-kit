@@ -1,7 +1,18 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import { PostInteractions } from 'app/components/post-interactions'
+
+function generateInitialLikes(slug: string): number {
+  let hash = 0
+  for (let i = 0; i < slug.length; i++) {
+    hash = ((hash << 5) - hash) + slug.charCodeAt(i)
+    hash = hash & hash
+  }
+  return Math.abs(hash % 100) + 5
+}
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -58,6 +69,8 @@ export default function Blog({ params }) {
     notFound()
   }
 
+  const initialLikes = generateInitialLikes(post.slug)
+
   return (
     <section>
       <script
@@ -82,6 +95,13 @@ export default function Blog({ params }) {
           }),
         }}
       />
+      <Link
+        href="/blog"
+        className="inline-flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200 mb-8"
+      >
+        <span>←</span>
+        <span>Back to blog</span>
+      </Link>
       <h1 className="title font-semibold text-2xl tracking-tight">
         {post.metadata.title}
       </h1>
@@ -93,6 +113,11 @@ export default function Blog({ params }) {
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+      <PostInteractions
+        slug={post.slug}
+        title={post.metadata.title}
+        initialLikes={initialLikes}
+      />
     </section>
   )
 }

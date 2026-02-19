@@ -1,11 +1,12 @@
-import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { getBlogPosts } from 'app/blog/utils'
+import { BlogPostCard } from './blog-post-card'
+import { extractPreview } from 'app/lib/content-utils'
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts()
 
   return (
-    <div>
+    <div className="-mx-6">
       {allBlogs
         .sort((a, b) => {
           if (
@@ -15,22 +16,24 @@ export function BlogPosts() {
           }
           return 1
         })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/blog/${post.slug}`}
-          >
-            <div className="w-full flex items-baseline space-x-4">
-              <p className="text-neutral-600 dark:text-neutral-400 whitespace-nowrap tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
+        .map((post) => {
+          const preview = extractPreview(
+            post.metadata.summary,
+            post.content,
+            180
+          )
+
+          return (
+            <BlogPostCard
+              key={post.slug}
+              slug={post.slug}
+              title={post.metadata.title}
+              publishedAt={post.metadata.publishedAt}
+              image={post.metadata.image}
+              preview={preview}
+            />
+          )
+        })}
     </div>
   )
 }
