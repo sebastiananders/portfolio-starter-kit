@@ -1,0 +1,15 @@
+---
+title: 'Make your notes work for you'
+publishedAt: '2026-02-25'
+summary: 'I added an automation to make my notes work for me'
+---
+## Why?
+I add several notes per day. Every note is me thinking and mentally structuring information. There was one thing missing: a daily summary and an automatic to do. Every morning, when I open my laptop I’d like to have a quick retro from the day before and a todo for the upcoming 8h of working.
+
+## How?
+I write my notes in Cursor in a single .md file. One md file per month. There I separate my notes into days, with a simple markdown formatting. Committing and pushing it to GitHub and the notes Repo hold an automation that basically does its job every night. At 11pm it checks the commit history and analysis the notes of the day. From there Claude generates a summary and a todo from it. With a simple Python script that runs daily 
+
+## Result!
+Every night at 11pm your notes get processed by Claude, and at 8am the summary lands in my inbox.
+
+![iOS Screenshot of the eMail I received](public/images/automation.jpg)
