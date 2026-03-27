@@ -1,0 +1,15 @@
+---
+title: 'Update: LLM DesignOps'
+publishedAt: '2026-03-27'
+summary: 'Currently exploring how the Figma MCP enables me (well Claude Code really) to compare the design library in Figma with the currently open code base.'
+---
+
+Currently exploring how the Figma MCP enables me (well Claude Code really) to compare the design library in Figma with the currently open code base.
+
+The code connect mapping saves a lot of tokens and makes it crazy fast, once everything is mapped. 
+
+I update a component in the Figma Design Library and hit publish. I then run Claude Code. Using the Figma MCP, it fetches the updated design data from Figma and compares it to my local codebase. Claude Code updates my local codebase (e.g., React components, CSS modules, design tokens) to match the new Figma specs. I review Claude Code's changes and push the updated code to the GitHub repository. The remote repository is now updated, Figma Code Connect automatically updates Dev Mode. Now, when anyone clicks on that component in Figma, it displays the newly updated, accurate code snippet from your GitHub repo.
+
+![Gemini generated diagram](/images/designops.png)
+
+This diagram is crazy. I have generated it with Gemini 3 Pro and shows the entire process.
