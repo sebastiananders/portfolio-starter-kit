@@ -16,7 +16,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-6">
-      {`I design and prototype user experiences for human in the loop LLM interfaces. Transforming SaaS into true AI-native experiences. I am exploring seamless ai integrations, with eventually replacing the SaaS CRUD paradigm.
+      {`I design and prototype user experiences for human in the loop LLM interfaces. Gradually transforming SaaS into true AI-native experiences, with eventually replacing the old-school SaaS CRUD paradigm.
 `}</p>
       <div className="flex gap-4 items-center">
         {/* Instagram */}
