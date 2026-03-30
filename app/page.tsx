@@ -16,7 +16,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-6">
-      {`Design and prototyping for human in the loop LLM interfaces.
+      {`I design and prototype user experiences for human in the loop LLM interfaces. Transforming SaaS into true AI-native experiences.
 `}</p>
 
       <div className="flex gap-4 items-center">
