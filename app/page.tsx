@@ -12,7 +12,7 @@ export default function Page() {
         {`Sebastian Anders` }
       </p>
       <p className="lg:text-1xl text-neutral-600 dark:text-neutral-400">
-        {`Designer, writer, musician, fire fighter` }
+        {`Lead Design Engineer · Berlin` }
       </p>
       <br></br>
       <p className="mb-6">
