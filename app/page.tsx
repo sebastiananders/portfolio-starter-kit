@@ -16,7 +16,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-2">
-      {`I focus on delivering design that just works. I do hands-on full stack product design & prototyping. I care for business impact and growth by aligning product decisions with constant experiments. And I love building things.
+      {`Design and prototyping for human in the loop LLM interfaces. 
 `}</p>  
       {/* <p className="mb-3">
       {`The internet is an ever changing space. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of design experience, I know how to navigate product decisions and create compelling user experiences.
@@ -47,7 +47,7 @@ export default function Page() {
         </ul>
       </div> */}
 
-      <AiChat />
+      {/* <AiChat /> */}
 
 
       {/* <div className="my-8">
