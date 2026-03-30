@@ -45,15 +45,14 @@ export default function AboutPage() {
         </dl>
       </div>
 
-      <div className="relative w-full aspect-[4/3]">
-        <Image
-          src="/images/profile_image.jpg"
-          alt="Sebastian Anders"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <Image
+        src="/images/profile_image.jpg"
+        alt="Sebastian Anders"
+        width={800}
+        height={1200}
+        className="w-full h-auto"
+        priority
+      />
     </section>
   )
 }
