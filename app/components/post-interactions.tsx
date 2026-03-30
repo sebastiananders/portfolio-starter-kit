@@ -84,10 +84,6 @@ export function PostInteractions({
     return (
       <div className="flex items-center gap-6 mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
         <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-          <HeartIcon filled={false} />
-          <span>{initialLikes}</span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
           <ShareIcon />
           <span>Share</span>
         </div>
@@ -133,21 +129,6 @@ export function PostInteractions({
 
   return (
     <div className="flex items-center gap-6 mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
-      {/* Like Button */}
-      <button
-        onClick={handleLike}
-        aria-label={liked ? 'Unlike this post' : 'Like this post'}
-        aria-pressed={liked}
-        className={`flex items-center gap-2 text-sm transition-colors duration-200 ${
-          liked
-            ? 'text-red-500 dark:text-red-400'
-            : 'text-neutral-600 dark:text-neutral-400 hover:text-red-500 dark:hover:text-red-400'
-        }`}
-      >
-        <HeartIcon filled={liked} />
-        <span>{likeCount}</span>
-      </button>
-
       {/* Share Button */}
       {shareFeedback ? (
         <span className="text-xs text-green-600 dark:text-green-400">
