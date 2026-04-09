@@ -10,7 +10,7 @@ export default function AboutPage() {
     <section>
       <h1 className="text-2xl font-semibold mb-1">Sebastian Anders</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-        Lead Design Engineer · Berlin
+        Design & Engineering · Berlin
       </p>
 
       <p className="mb-8 text-neutral-800 dark:text-neutral-200">
