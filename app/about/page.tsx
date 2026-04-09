@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'About',
-  description: 'Lead Design Engineer based in Berlin with 15+ years of experience in product design and front-end engineering.',
+  description: 'Design Engineer, based in Berlin with 15+ years of experience in product design and front-end engineering.',
 }
 
 export default function AboutPage() {
