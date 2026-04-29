@@ -16,7 +16,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-6">
-      {`I design and prototype user experiences for human in the loop LLM interfaces. Gradually transforming SaaS into true AI-native experiences, with eventually replacing the old-school SaaS CRUD paradigm.
+      {`I turn complex matters into simple and beautiful features and products. Strategy, Design, Prototyping, Front-End Development - all in one cycle.
 `}</p>
       <div className="flex gap-4 items-center">
         {/* Instagram */}
