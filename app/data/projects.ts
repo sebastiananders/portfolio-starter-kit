@@ -10,33 +10,46 @@ export interface Project {
   tech: string[]
   image?: string
   images?: string[]
+  comingSoon?: boolean
   categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
 }
 
 export const projects: Project[] = [
   {
     id: 'MechOS',
-    title: "Agent Orchestration on iOS",
-    description: "Challenging the current, scattered state of control with MechOS. With the computer now running on its own, people might feel the need to see what's going on. (At least nerds like me)",
+    title: "AI Agent Monitoring & Orchestrating",
+    description: "Watch and control your AI agents on mobile. With the computer now running on its own, people might feel the need to see what's going on.",
     year: "2026",
     location: "Berlin",
     tech: ["Figma", "Mobbin", "Claude Code"],
-    image: "/images/507_1x_shots_so.png",
+    image: "/images/mechos/hero.png",
     images: ["/images/507_1x_shots_so.png", "/images/mechOS.png"],
     categories: ["Design", "Experiment"],
     figmaLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
   },
   {
     id: 'ava',
-    title: "AVA - Gen AI Content Platform",
-    description: "Use case sensitiv content generation platform for AI agents. Researched market fit, developed the product strategy, built & managed the AVA design system, front-end library and design tokens.",
+    title: "AVA AI Content Platform",
+    description: "Generative AI platform for content creation. Owned market fit research, product strategy, built & managed the AVA design system, front-end library and design tokens.",
     year: "2024-25",
-    location: "Zurich",
+    location: "Zurich, Switzerland",
     tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
-    image: "/images/536shots_so.png",
+    image: "/images/ava/hero.png",
     images: ["/images/536shots_so.png", "/images/ava.png", "/images/ava2.png"],
     categories: ["Design", "Prototyping"],
     caseStudyLink: "https://sebastian-anders.framer.website/ava"
+  },
+  {
+    id: 'soham',
+    title: "Soham AI Event Assistant",
+    description: "Strategy, Design and Prototyping for AI-native event management assistant, eventually replacing the SaaS style event management platform.",
+    year: "2026",
+    location: "Tel Aviv, New York",
+    tech: ["React", "Figma", "Claude Code"],
+    image: "/images/Soham/hero.png",
+    images: ["/images/Soham/hero.png", "/images/soham_token.png"],
+    comingSoon: true,
+    categories: ["Design", "Prototyping", "Engineering"],
   },
   {
     id: 'zunder',
@@ -80,12 +93,13 @@ export const projects: Project[] = [
   },
   {
     id: 'identity',
-    title: "Identity - Watch your data shared across the web",
-    description: "Watch and manage your personal data, as it makes it way through the web. iPhone app design exploration for personal data distribution management.",
+    title: "Identity - See where your data is going",
+    description: "Watch and manage your personal data, as it's making its way through the web. iPhone app design exploration for personal data distribution management.",
     year: "2025",
     location: "Berlin",
     tech: ["Figma", "Claude", "ChatGPT", "Cursor", "xCode"],
-    image: "/images/identity.png",
+    image: "/images/identity/hero.png",
+    images: ["/images/identity/hero.png", "/images/identity.png"],
     categories: ["Design", "Experiment"]
   },
   {
@@ -95,7 +109,7 @@ export const projects: Project[] = [
     year: "2023-24",
     location: "Hamburg",
     tech: ["K8s", "Docker", "Figma", "Storybook", "Dovetail"],
-    image: "/images/548shots_so.png",
+    image: "/images/connectware/hero.png",
     images: ["/images/548shots_so.png", "/images/connectware.webp", "/images/automation.jpg"],
     categories: ["Design", "Prototyping"],
     caseStudyLink: "https://sebastian-anders.framer.website/cybus"

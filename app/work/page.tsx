@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { projects } from 'app/data/projects'
 
-const selectedIds = ['ava', 'MechOS', 'factory']
+const selectedIds = ['ava', 'MechOS', 'soham', 'identity', 'factory']
 const selectedProjects = selectedIds
   .map((id) => projects.find((p) => p.id === id))
   .filter(Boolean) as typeof projects
@@ -28,30 +28,7 @@ export default function PortfolioPage() {
         </p>
 
         <div className="flex gap-5 items-center">
-          <a href="https://www.instagram.com/_sebastiananders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <defs>
-                <radialGradient id="ig-grad-p" cx="30%" cy="107%" r="130%">
-                  <stop offset="0%" stopColor="#feda75"/>
-                  <stop offset="20%" stopColor="#fa7e1e"/>
-                  <stop offset="45%" stopColor="#d62976"/>
-                  <stop offset="70%" stopColor="#962fbf"/>
-                  <stop offset="100%" stopColor="#4f5bd5"/>
-                </radialGradient>
-              </defs>
-              <path fill="url(#ig-grad-p)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/hey-sebastian/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="https://substack.com/@sebastiananders" target="_blank" rel="noopener noreferrer" aria-label="Substack">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <path fill="#FF6719" d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
-            </svg>
-          </a>
+          {/* Figma */}
           <a href="https://figma.com/@_sebanders" target="_blank" rel="noopener noreferrer" aria-label="Figma">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
               <path fill="#F24E1E" d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z"/>
@@ -61,14 +38,28 @@ export default function PortfolioPage() {
               <path fill="#0ACF83" d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z"/>
             </svg>
           </a>
+          {/* GitHub */}
           <a href="https://github.com/sebastiananders" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
               <path className="fill-neutral-900 dark:fill-neutral-100" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
             </svg>
           </a>
+          {/* Vercel / v0 */}
           <a href="https://v0.app/@sebastiananders" target="_blank" rel="noopener noreferrer" aria-label="v0">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
               <path className="fill-neutral-900 dark:fill-neutral-100" d="M24 22.525H0l12-21.05 12 21.05z"/>
+            </svg>
+          </a>
+          {/* LinkedIn */}
+          <a href="https://www.linkedin.com/in/hey-sebastian/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          {/* Substack */}
+          <a href="https://substack.com/@sebastiananders" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#FF6719" d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
             </svg>
           </a>
         </div>
@@ -90,92 +81,41 @@ export default function PortfolioPage() {
             const isEven = index % 2 === 1
             const num = String(index + 1).padStart(2, '0')
             return (
-              <div key={project.id} className="py-16 group">
+              <div key={project.id}>
+                {index === 2 && (
+                  <div className="py-20 border-t border-neutral-200 dark:border-neutral-800">
+                    <p className="text-2xl lg:text-3xl font-medium text-neutral-900 dark:text-neutral-100 leading-snug max-w-2xl">
+                      I help companies turn complex, ambiguous product challenges into clear, beautiful experiences.
+                    </p>
+                    <p className="text-2xl lg:text-3xl font-medium text-neutral-400 dark:text-neutral-500 leading-snug max-w-2xl mt-2">
+                      From early-stage 0→1 prototyping and MVP building to scaling into production ready environments — strategy, design and code, all in one cycle.
+                    </p>
+                  </div>
+                )}
+              <div className="py-16 group">
                 <p className="text-[96px] font-bold leading-none text-neutral-100 dark:text-neutral-800 mb-2 select-none tabular-nums">
                   {num}
                 </p>
-                <div className={`flex flex-col md:flex-row md:gap-12 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                  {(project.images?.length || project.image) && (
-                    <div className="md:w-[58%] flex-shrink-0 mb-8 md:mb-0">
-                      {project.images && project.images.length >= 3 ? (
-                        <div className="grid grid-cols-3 grid-rows-2 gap-2 aspect-[16/10] rounded-lg overflow-hidden">
-                          <div className="col-span-2 row-span-2 overflow-hidden">
-                            <Image
-                              src={project.images[0]}
-                              alt={`${project.title} — main`}
-                              width={800}
-                              height={600}
-                              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                            />
-                          </div>
-                          <div className="col-span-1 row-span-1 overflow-hidden">
-                            <Image
-                              src={project.images[1]}
-                              alt={`${project.title} — detail`}
-                              width={400}
-                              height={300}
-                              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                            />
-                          </div>
-                          <div className="col-span-1 row-span-1 overflow-hidden">
-                            <Image
-                              src={project.images[2]}
-                              alt={`${project.title} — detail`}
-                              width={400}
-                              height={300}
-                              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                            />
-                          </div>
-                        </div>
-                      ) : project.images && project.images.length === 2 ? (
-                        <div className="grid grid-cols-3 gap-2 aspect-[16/10] rounded-lg overflow-hidden">
-                          <div className="col-span-2 overflow-hidden">
-                            <Image
-                              src={project.images[0]}
-                              alt={`${project.title} — main`}
-                              width={800}
-                              height={600}
-                              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                            />
-                          </div>
-                          <div className="col-span-1 overflow-hidden">
-                            <Image
-                              src={project.images[1]}
-                              alt={`${project.title} — detail`}
-                              width={400}
-                              height={600}
-                              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="overflow-hidden rounded-lg">
-                          <Image
-                            src={project.image!}
-                            alt={`${project.title} preview`}
-                            width={800}
-                            height={600}
-                            className="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                          />
-                        </div>
-                      )}
+                <div className={`flex flex-col md:flex-row md:gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  {project.image && (
+                    <div className={`md:w-[75%] flex-shrink-0 overflow-hidden rounded-lg mb-8 md:mb-0 ${isEven ? 'md:-mr-12' : 'md:-ml-12'}`}>
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        width={900}
+                        height={650}
+                        className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                      />
                     </div>
                   )}
                   <div className="flex flex-col justify-center min-w-0">
-                    <div className="flex flex-wrap gap-3 mb-4">
-                      {project.categories.map((cat) => (
-                        <span key={cat} className="text-xs uppercase tracking-widest text-neutral-400">
-                          {cat}
-                        </span>
-                      ))}
-                    </div>
-                    <h3 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2 leading-tight">
+                    <h3 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2 leading-none">
                       {project.title}
                     </h3>
                     <p className="text-sm text-neutral-400 mb-5">
                       {project.year}{project.location ? ` · ${project.location}` : ''}
                     </p>
-                    <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                    <p className="text-neutral-600 dark:text-white mb-6 leading-snug">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -188,6 +128,11 @@ export default function PortfolioPage() {
                         </span>
                       ))}
                     </div>
+                    {project.comingSoon && (
+                      <span className="text-xs uppercase tracking-widest text-neutral-400 border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1">
+                        Coming soon
+                      </span>
+                    )}
                     {(project.link || project.caseStudyLink || project.figmaLink) && (
                       <div className="flex flex-wrap gap-5">
                         {project.link && (
@@ -225,63 +170,29 @@ export default function PortfolioPage() {
                   </div>
                 </div>
               </div>
+              </div>
             )
           })}
         </div>
       </section>
 
-      <hr className="border-neutral-200 dark:border-neutral-700" />
-
-      {/* ── About ── */}
-      <section className="py-16 pb-24">
-        <p className="text-xs uppercase tracking-widest text-neutral-400 mb-3">
-          About
+      {/* ── Blog ── */}
+      <section className="py-20 pb-28 border-t border-neutral-200 dark:border-neutral-800">
+        <p className="text-xs uppercase tracking-widest text-neutral-400 mb-6">
+          From the blog
         </p>
-        <h2 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-8">
-          Background
+        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 leading-none mb-6 max-w-xl">
+          Thinking out loud on AI, design & building products.
         </h2>
-
-        <div className="flex flex-col md:flex-row md:gap-16">
-          <div className="flex-1 min-w-0">
-            <p className="text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed text-lg">
-              I do hands-on strategy and design for complex features and products for B2B and B2C companies.
-              Prototyping the future of SaaS in the AI era and building HITL experiences for LLM interfaces.
-            </p>
-            <dl className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 text-sm">
-              <dt className="text-neutral-400 font-medium pt-0.5">Experience</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">18 years of interface design</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Education</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">B.A. Interface Design, University of Applied Science Potsdam</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Currently</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">Nortal</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Clients</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">Miele, Porsche, IBM, Deutsche Bahn, BASF, Bundesministerium der Finanzen, Bizzabo</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Tools</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">Figma, React, Claude Code, Vercel, Cursor, BMAD, Langfuse</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Personal</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">Writer · Musician · Voluntary firefighter</dd>
-
-              <dt className="text-neutral-400 font-medium pt-0.5">Award</dt>
-              <dd className="text-neutral-900 dark:text-neutral-100">UN Habitat III CityVis (student category)</dd>
-            </dl>
-          </div>
-
-          <div className="mt-10 md:mt-0 md:w-64 lg:w-72 flex-shrink-0">
-            <Image
-              src="/images/profile_image.jpg"
-              alt="Sebastian Anders"
-              width={600}
-              height={900}
-              className="rounded-lg w-full h-auto"
-              priority
-            />
-          </div>
-        </div>
+        <p className="text-neutral-500 dark:text-neutral-400 mb-10 max-w-lg leading-relaxed">
+          I write about AI-native design, prototyping, the tools I use, and what it actually feels like to ship products in 2026.
+        </p>
+        <a
+          href="/blog"
+          className="inline-flex items-center gap-2 text-base font-semibold text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 rounded-full px-6 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        >
+          Read the blog <span aria-hidden>→</span>
+        </a>
       </section>
 
     </div>
