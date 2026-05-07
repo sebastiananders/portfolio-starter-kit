@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <section>
+    <section className="max-w-xl mx-4 mt-6 lg:mx-auto px-2 md:px-0">
       <h1 className="text-2xl font-semibold mb-1">Sebastian Anders</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-6">
         Design & Engineering · Berlin

@@ -9,6 +9,7 @@ export interface Project {
   figmaLink?: string
   tech: string[]
   image?: string
+  images?: string[]
   categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
 }
 
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     location: "Berlin",
     tech: ["Figma", "Mobbin", "Claude Code"],
     image: "/images/507_1x_shots_so.png",
+    images: ["/images/507_1x_shots_so.png", "/images/mechOS.png"],
     categories: ["Design", "Experiment"],
     figmaLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
   },
@@ -32,6 +34,7 @@ export const projects: Project[] = [
     location: "Zurich",
     tech: ["Figma", "React", "TypeScript", "Langfuse", "Claude Code"],
     image: "/images/536shots_so.png",
+    images: ["/images/536shots_so.png", "/images/ava.png", "/images/ava2.png"],
     categories: ["Design", "Prototyping"],
     caseStudyLink: "https://sebastian-anders.framer.website/ava"
   },
@@ -93,6 +96,7 @@ export const projects: Project[] = [
     location: "Hamburg",
     tech: ["K8s", "Docker", "Figma", "Storybook", "Dovetail"],
     image: "/images/548shots_so.png",
+    images: ["/images/548shots_so.png", "/images/connectware.webp", "/images/automation.jpg"],
     categories: ["Design", "Prototyping"],
     caseStudyLink: "https://sebastian-anders.framer.website/cybus"
   },

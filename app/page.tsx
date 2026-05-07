@@ -4,7 +4,7 @@ import AiChat from './components/ai-chat'
 
 export default function Page() {
   return (
-    <section>
+    <section className="max-w-xl mx-4 mt-6 lg:mx-auto px-2 md:px-0">
       {/* <h1 className="mb-8 text-2xl font-semibold">
         In the loop: AI & UX
       </h1> */}

@@ -72,7 +72,7 @@ export default function Blog({ params }) {
   const initialLikes = generateInitialLikes(post.slug)
 
   return (
-    <section>
+    <section className="max-w-xl mx-4 mt-6 lg:mx-auto px-2 md:px-0">
       <script
         type="application/ld+json"
         suppressHydrationWarning
