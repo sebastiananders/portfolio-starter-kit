@@ -104,20 +104,17 @@ export default function AiChat() {
   }
 
   return (
-    <section className="relative">
+    <section>
       {messages.length > 0 && (
-        <button
-          type="button"
-          onClick={() => setIsOpen((v) => !v)}
-          aria-label={isOpen ? 'Collapse chat' : 'Expand chat'}
-          className="absolute -top-8 right-0 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            {isOpen
-              ? <polyline points="6 9 12 15 18 9" />
-              : <polyline points="18 15 12 9 6 15" />}
-          </svg>
-        </button>
+        <div className="flex justify-center mb-2">
+          <button
+            type="button"
+            onClick={() => setIsOpen((v) => !v)}
+            className="text-xs text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition"
+          >
+            {isOpen ? 'hide' : 'show'}
+          </button>
+        </div>
       )}
 
       {isOpen && (
