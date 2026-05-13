@@ -117,8 +117,10 @@ export default function AiChat() {
         </div>
       )}
 
-      {isOpen && (
-        <>
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+      >
+        <div className={`min-h-0 overflow-hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
           <div className="max-h-[300px] overflow-y-auto">
             {messages.length === 0 && !showSuggestions && (
               <p className="text-sm text-neutral-400 text-center py-8">
@@ -164,8 +166,8 @@ export default function AiChat() {
               </p>
             </div>
           )}
-        </>
-      )}
+        </div>
+      </div>
 
       <form onSubmit={handleSubmit} className={`flex gap-2${isOpen && messages.length > 0 ? ' mt-2' : ''}`}>
         <input
