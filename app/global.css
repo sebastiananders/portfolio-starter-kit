@@ -31,9 +31,10 @@
   }
 }
 
-html {
-  min-width: 360px;
-  scrollbar-gutter: stable;
+@media (hover: hover) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 .prose .anchor {
