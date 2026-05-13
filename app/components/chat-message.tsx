@@ -16,7 +16,7 @@ export function ChatMessage({ role, content }: MessageProps) {
 
   return (
     <div className="flex justify-start mb-4">
-      <div className="max-w-[80%] rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 px-4 py-3">
+      <div className="max-w-[80%] rounded-lg bg-neutral-50 dark:bg-neutral-950 px-4 py-3">
         <p className="text-sm text-neutral-800 dark:text-neutral-200 whitespace-pre-wrap">
           {content}
         </p>

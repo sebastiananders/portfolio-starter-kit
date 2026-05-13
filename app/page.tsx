@@ -1,6 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
 import Image from 'next/image'
-import AiChat from './components/ai-chat'
 
 export default function Page() {
   return (
@@ -102,9 +101,6 @@ export default function Page() {
           <li>Techniker Krankenkasse</li>
         </ul>
       </div> */}
-
-      {/* <AiChat /> */}
-
 
       {/* <div className="my-8">
         <BlogPosts />

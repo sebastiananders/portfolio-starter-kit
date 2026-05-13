@@ -3,17 +3,12 @@ import { buildSystemPrompt } from '../../lib/chat-context'
 import { checkRateLimit } from '../../lib/rate-limiter'
 import { NextResponse } from 'next/server'
 
-const DEFAULT_MODEL = 'claude-3-5-sonnet-20241022'
-const FALLBACK_MODEL = 'claude-3-5-sonnet-20240620'
-const SECOND_FALLBACK_MODEL = 'claude-3-5-haiku-20241022'
-const LEGACY_SONNET = 'claude-3-sonnet-20240229'
-const LEGACY_HAIKU = 'claude-3-haiku-20240307'
+const DEFAULT_MODEL = 'claude-sonnet-4-5'
+const FALLBACK_MODEL = 'claude-haiku-4-5'
 
-// Normalize model names so deprecated aliases (e.g. "-latest") resolve to a known version
 function resolveModel() {
   const raw = process.env.ANTHROPIC_MODEL?.trim()
   if (!raw) return DEFAULT_MODEL
-  if (raw === 'claude-3-5-sonnet-latest') return DEFAULT_MODEL
   return raw
 }
 
@@ -76,9 +71,6 @@ export async function POST(request: Request) {
       model,
       DEFAULT_MODEL,
       FALLBACK_MODEL,
-      SECOND_FALLBACK_MODEL,
-      LEGACY_SONNET,
-      LEGACY_HAIKU
     ].filter(
       (value, index, arr) => arr.indexOf(value) === index
     )
