@@ -1,7 +1,7 @@
 ---
 title: 'OpenDesign'
 publishedAt: '2026-05-27'
-summary: 'About the open alternative to Claude Design'
+summary: 'A quick dive into the open alternative to Claude Design. How to get it and how it works. Is it a real alternative? In my case, it fucked up : ()'
 ---
 
 I don’t know how I found this but it made sense from my perspective so I wanted to give it a try. Open Design also perfectly aligns with my latest blog post about how we as users encapsulate ourselves into ecosystems. I wrote about the Claude Code IDE and how I felt being trapped in just one AI provider. Now there is OpenDesign: they call themselves: “The open-source alternative to Claude Design” - which sounds great on paper.
@@ -29,3 +29,16 @@ You either use your local LLM or use BYOK. I choose local LLM, since it shows al
 Looking at the settings it is interesting to determine the backbone of this app. There are a few things worth mentioning. Apart from the usual there is a very extensive skill library, where many skills are pre-installed and opt-out. Then there is Design Jury. It’s a “five-panel design review for your runs” - whatever that means. I suspect it to be an extra agent post running after a design has been generated. I’ll check and see what happens. Then there is Design Systems.
 
 https://open-design.ai/blog/open-source-alternative-to-claude-design/
+
+I gave the tool a specific task I am currently working on anyway. After some clarification questions it worked for 40 minutes straight. My directions where not to specific cause I wanted to just try the tool and the features. After 40 minutes I hit my limit with Claude Code. Now with OpenDesign I am able to simply switch to Codex or Gemini to continue working on this specific task. No model agnostic silo agents anymore. I can use whatever I want. Let's see how the handoff to a different model works.
+
+![Screenshot of the desktop app OpenDesign](/images/limit.png)
+
+I went back to settings, installed Gemini CLI globally via Terminal and did a rescan on the OpenDesign interface. It appeared immediately. Back to the project - wanted Gemini to continue the work and…
+
+## It fucked up
+
+It asked me initial clarification questions. It shows that Gemini did not have any context from prior work with Claude Codes agents. This sucks. But where did it fucked up? I assumed OpenDesign provides a context layer for other models to easily hand-off running projects. It seemingly did not. Pity!
+
+![Screenshot of the desktop app OpenDesign](/images/nope.png)
+
