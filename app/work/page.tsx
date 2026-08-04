@@ -15,7 +15,7 @@ export default function PortfolioPage() {
       {/* ── Hero ── */}
       <section className="pt-4 pb-16">
         <p className="text-xs uppercase tracking-widest text-neutral-400 mb-6">
-          Lead Design for 0-1 and scaling
+          Product & Engineering for 0→1 and scaling
         </p>
         <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4">
           Work
