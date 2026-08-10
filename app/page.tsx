@@ -11,11 +11,11 @@ export default function Page() {
         {`Sebastian Anders` }
       </p>
       <p className="lg:text-1xl text-neutral-600 dark:text-neutral-400">
-        {`Product & Engineering · Berlin` }
+        {`Design-led Product Lead · Berlin` }
       </p>
       <br></br>
       <p className="mb-6">
-      {`Product manager with 15 years in digital products who still builds. I take products from opportunity to release — discovery, roadmap, alignment with executives and engineering — and prototype in code, so specs are testable and estimates are grounded.
+      {`15 years leading product from opportunity to release — discovery, roadmap, and alignment with executives and engineering. Design-led by training; hands-on with code, so specs are testable and estimates are grounded.
 `}</p>
       <div className="flex gap-4 items-center">
         {/* Instagram */}

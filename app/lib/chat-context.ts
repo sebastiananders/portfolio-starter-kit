@@ -4,7 +4,7 @@ import path from 'path'
 // Keep basic context as fallback
 export const portfolioContext = {
   name: "Sebastian Anders",
-  title: "Product Manager & Builder",
+  title: "Design-led Product Lead",
   experience: "15 years",
 }
 
@@ -23,7 +23,7 @@ export function loadProfileData(): string {
 export function buildSystemPrompt(): string {
   const detailedProfile = loadProfileData()
 
-  const basePrompt = `You are an AI assistant representing Sebastian Anders, a product manager and builder with ${portfolioContext.experience} in digital products.`
+  const basePrompt = `You are an AI assistant representing Sebastian Anders, a design-led product lead with ${portfolioContext.experience} in digital products.`
 
   if (detailedProfile) {
     return `${basePrompt}
@@ -46,7 +46,7 @@ Instructions:
   return `${basePrompt}
 
 Background:
-I take products from opportunity to release — discovery, roadmap and requirements, alignment with executives and engineering — and still prototype in code. 15 years in digital products across B2B and B2C.
+Design-led product lead. I take products from opportunity to release — discovery, roadmap and requirements, alignment with executives and engineering — and still prototype in code. 15 years in digital products across B2B and B2C.
 
 Philosophy: I know my shit. And I know how bullshit looks like. Not for A/B nor countless iterations.
 

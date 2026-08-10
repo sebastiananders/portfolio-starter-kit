@@ -12,13 +12,13 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Sebastian Anders | Product Manager & Builder',
+    default: 'Sebastian Anders | Design-led Product Lead',
     template: '%s | Sebastian Anders',
   },
-  description: 'Product manager with 15 years in digital products who takes products from opportunity to release — and prototypes in code.',
+  description: 'Design-led product lead with 15 years in digital products. Takes products from opportunity to release — discovery, roadmap, exec alignment — and prototypes in code.',
   openGraph: {
-    title: 'Sebastian Anders | Product Manager & Builder',
-    description: 'Product manager with 15 years in digital products who takes products from opportunity to release — and prototypes in code.',
+    title: 'Sebastian Anders | Design-led Product Lead',
+    description: 'Design-led product lead with 15 years in digital products. Takes products from opportunity to release — discovery, roadmap, exec alignment — and prototypes in code.',
     url: baseUrl,
     siteName: 'Sebastian Anders',
     locale: 'en_US',

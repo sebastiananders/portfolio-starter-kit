@@ -3,7 +3,7 @@
 ## Overview
 - Name: Sebastian Anders
 - Education: B.A. Interfacedesign | University of Applied Sciences Potsdam
-- Experience: Product manager & builder with 15 years in digital products; takes products from opportunity to release and prototypes in code
+- Experience: Design-led product lead with 15 years in digital products; takes products from opportunity to release and prototypes in code
 - Location: Berlin, Germany
 - Contact: https://www.linkedin.com/in/hey-sebastian/ hi@sebastian-anders.com
 
