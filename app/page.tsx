@@ -1,6 +1,7 @@
 import { BlogPosts } from 'app/components/posts'
 import Image from 'next/image'
 import ProfileDetails from 'app/components/profile-details'
+import ProjectMosaic from 'app/components/project-mosaic'
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <p className="mb-6">
       {`15 years of designing and leading product direction. From opportunity to release — discovery, roadmap, prototyping and alignment with executives and engineering. Design-led and hands-on with code.
 `}</p>
+      <ProjectMosaic />
       <ProfileDetails />
       <div className="flex gap-4 items-center">
         {/* Instagram */}

@@ -92,7 +92,7 @@ export default function PortfolioPage() {
                     </p>
                   </div>
                 )}
-              <div className="py-16 group">
+              <div id={project.id} className="py-16 group scroll-mt-8">
                 <p className="text-[96px] font-bold leading-none text-neutral-100 dark:text-neutral-800 mb-2 select-none tabular-nums">
                   {num}
                 </p>
