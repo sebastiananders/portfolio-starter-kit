@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { projects } from 'app/data/projects'
 
-const selectedIds = ['ava', 'MechOS', 'soham', 'identity', 'factory']
+const selectedIds = ['ava', 'MechOS', 'soham', 'identity', 'factory', 'zunder', 'stumble', 'firesite', 'noema', 'skytale']
 const selectedProjects = selectedIds
   .map((id) => projects.find((p) => p.id === id))
   .filter(Boolean) as typeof projects
@@ -128,6 +128,40 @@ export default function PortfolioPage() {
                         </span>
                       ))}
                     </div>
+                    {(project.link || project.caseStudyLink || project.figmaLink) && (
+                      <div className="flex flex-wrap gap-5">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
+                          >
+                            Visit →
+                          </a>
+                        )}
+                        {project.caseStudyLink && (
+                          <a
+                            href={project.caseStudyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
+                          >
+                            Case Study →
+                          </a>
+                        )}
+                        {project.figmaLink && (
+                          <a
+                            href={project.figmaLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
+                          >
+                            Figma →
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

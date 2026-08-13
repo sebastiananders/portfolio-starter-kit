@@ -1,5 +1,6 @@
 import { BlogPosts } from 'app/components/posts'
 import Image from 'next/image'
+import ProfileDetails from 'app/components/profile-details'
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <p className="mb-6">
       {`15 years of designing and leading product direction. From opportunity to release — discovery, roadmap, prototyping and alignment with executives and engineering. Design-led and hands-on with code.
 `}</p>
+      <ProfileDetails />
       <div className="flex gap-4 items-center">
         {/* Instagram */}
         <a href="https://www.instagram.com/_sebastiananders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
