@@ -15,7 +15,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-6">
-      {`15 years leading product from opportunity to release — discovery, roadmap, and alignment with executives and engineering. Design-led by training; hands-on with code, so specs are testable and estimates are grounded.
+      {`15 years of designing and leading product direction. From opportunity to release — discovery, roadmap, prototyping and alignment with executives and engineering. Design-led and hands-on with code.
 `}</p>
       <div className="flex gap-4 items-center">
         {/* Instagram */}
