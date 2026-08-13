@@ -20,6 +20,8 @@ export default function Page() {
       {`15 years of designing and leading product direction. From opportunity to release — discovery, roadmap, prototyping and alignment with executives and engineering. Design-led and hands-on with code.
 `}</p>
       <ProjectMosaic />
+      <p className="mb-6">
+      {`I cut scope by prototyping the ambiguous thing in a weekend instead of arguing about it for three sprints, I write the spec engineers actually build from, I close the design–engineering gap that costs real money. I am a product person who happens to have a design background.`}</p>
       <ProfileDetails />
       <div className="flex gap-4 items-center">
         {/* Instagram */}
