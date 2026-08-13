@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 import ProfileDetails from 'app/components/profile-details'
 
 export const metadata = {
@@ -7,6 +8,8 @@ export const metadata = {
 }
 
 export default function AboutPage() {
+  notFound()
+
   return (
     <section className="max-w-xl mx-4 mt-6 lg:mx-auto px-2 md:px-0">
       <h1 className="text-2xl font-semibold mb-1">Sebastian Anders</h1>

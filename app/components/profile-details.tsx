@@ -9,7 +9,7 @@ export default function ProfileDetails() {
         <dd className="text-neutral-900 dark:text-neutral-100">B.A. Interface Design, University of Applied Science Potsdam</dd>
 
         <dt className="text-neutral-500 dark:text-neutral-400 font-medium">Currently</dt>
-        <dd className="text-neutral-900 dark:text-neutral-100">Bizzabo (freelance) · Nortal</dd>
+        <dd className="text-neutral-900 dark:text-neutral-100">Nortal</dd>
 
         <dt className="text-neutral-500 dark:text-neutral-400 font-medium">Clients</dt>
         <dd className="text-neutral-900 dark:text-neutral-100">Miele, Porsche, IBM, Deutsche Bahn, BASF, Bundesministerium der Finanzen, Bizzabo</dd>
