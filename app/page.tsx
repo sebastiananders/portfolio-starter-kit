@@ -17,7 +17,7 @@ export default function Page() {
       </p>
       <br></br>
       <p className="mb-6">
-      {`15 years of designing and leading product direction. From opportunity to release — discovery, roadmap, prototyping and alignment with executives and engineering. Design-led and hands-on with code.
+      {`Design-led product lead, closing gaps. Hands-on prototyping in code to navigate the team through ambiguity.
 `}</p>
       <ProjectMosaic />
       <p className="mb-6">
