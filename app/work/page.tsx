@@ -128,35 +128,6 @@ export default function PortfolioPage() {
                         </span>
                       ))}
                     </div>
-                    {project.comingSoon && (
-                      <span className="text-xs uppercase tracking-widest text-neutral-400 border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1">
-                        Coming soon
-                      </span>
-                    )}
-                    {(project.caseStudyLink || project.figmaLink) && (
-                      <div className="flex flex-wrap gap-5">
-                        {project.caseStudyLink && (
-                          <a
-                            href={project.caseStudyLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
-                          >
-                            Case Study →
-                          </a>
-                        )}
-                        {project.figmaLink && (
-                          <a
-                            href={project.figmaLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
-                          >
-                            Figma →
-                          </a>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
