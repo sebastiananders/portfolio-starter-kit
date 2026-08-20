@@ -13,15 +13,15 @@ export default function Page() {
         {`Sebastian Anders` }
       </p>
       <p className="lg:text-1xl text-neutral-600 dark:text-neutral-400">
-        {`Design-led Product Lead · Berlin` }
+        {`Product Design Engineer` }
       </p>
       <br></br>
       <p className="mb-6">
-      {`Design-led product lead, closing gaps. Hands-on prototyping in code to navigate the team through ambiguity.
+      {`Design & engineering, closing gaps. User flow design, hands-on prototyping in code to navigate the team through ambiguity.
 `}</p>
       <ProjectMosaic />
       <p className="mb-6">
-      {`I cut scope by prototyping the ambiguous thing in a weekend instead of arguing about it for three sprints, I write the spec engineers actually build from, I close the design–engineering gap that costs real money. I am a product person who happens to have a design background.`}</p>
+      {`I design and develop features and products. Focusing on the scope by prototyping the ambiguous thing in a few days instead of arguing about it for three sprints. I write specs engineers actually build from, I close the design–engineering gap indefinitely. I am a product design engineer person who is deep in the trenches but always keeps the bigger picture`}</p>
       <ProfileDetails />
       <div className="flex gap-4 items-center">
         {/* Instagram */}
