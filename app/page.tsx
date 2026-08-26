@@ -1,7 +1,7 @@
 import { BlogPosts } from 'app/components/posts'
 import Image from 'next/image'
 import ProfileDetails from 'app/components/profile-details'
-import ProjectMosaic from 'app/components/project-mosaic'
+import ThemeVideo from 'app/components/theme-video'
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
       <p className="mb-6">
       {`Design & engineering, closing gaps. User flow design, hands-on prototyping in code to navigate the team through ambiguity.
 `}</p>
-      <ProjectMosaic />
+      <ThemeVideo />
       <p className="mb-6">
       {`I design and develop features and products. Focusing on the scope by prototyping the ambiguous thing in a few days instead of arguing about it for three sprints. I write specs engineers actually build from, I close the design–engineering gap indefinitely. I am a product design engineer person who is deep in the trenches but always keeps the bigger picture`}</p>
       <ProfileDetails />
