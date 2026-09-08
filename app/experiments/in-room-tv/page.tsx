@@ -1,18 +1,18 @@
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Limehome — In-room TV prototype',
+  title: 'In-room TV — an unmanned-apartment prototype',
   description:
-    'An exploratory prototype for the in-room TV in limehome apartments: no menu, content indexed by stay phase, and a screen that behaves like a lamp before it behaves like a display.',
+    'A prototype for the in-room TV in unmanned serviced apartments: no menu, content indexed by stay phase, and a screen that behaves like a lamp before it behaves like a display.',
 }
 
-export default function LimehomePage() {
+export default function InRoomTvPage() {
   return (
     <article className="max-w-3xl mx-4 mt-6 lg:mx-auto px-2 md:px-0 pb-24">
       <div className="mb-10 -mx-2 md:mx-0">
         <video
           className="w-full h-auto rounded-md"
-          src="/videos/limehome/hero.mp4"
+          src="/videos/in-room-tv/hero.mp4"
           autoPlay
           loop
           muted
@@ -26,22 +26,15 @@ export default function LimehomePage() {
           Experiment · In-room TV
         </p>
         <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4">
-          Limehome
+          In-room TV
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6">
-          An exploratory prototype for the in-room TV in limehome apartments —
-          unmanned serviced apartments, app-based check-in, no reception. Not a
-          funded brief; a conversation with a friend on the operations side that
-          turned into something worth arguing about in a room.
+        <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          An exploratory prototype for the in-room TV in unmanned serviced
+          apartments — app-based check-in, no reception, nobody on site. Not a
+          funded brief; a conversation with a friend on the operations side of
+          one such operator that turned into something worth arguing about in
+          a room.
         </p>
-        <a
-          href="https://limehome-prototype.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-base font-semibold text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 rounded-full px-6 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-        >
-          Open the live prototype <span aria-hidden>→</span>
-        </a>
       </header>
 
       <section className="mb-16">
@@ -83,7 +76,7 @@ export default function LimehomePage() {
         <div className="-mx-2 md:mx-0">
           <video
             className="w-full h-auto rounded-md"
-            src="/videos/limehome/screen.mov"
+            src="/videos/in-room-tv/screen.mov"
             controls
             muted
             playsInline
@@ -139,8 +132,8 @@ export default function LimehomePage() {
         </p>
         <div className="-mx-2 md:mx-0">
           <Image
-            src="/images/limehome/mood.png"
-            alt="Limehome in-room TV mood frame"
+            src="/images/in-room-tv/mood.png"
+            alt="In-room TV mood frame"
             width={1920}
             height={1080}
             className="w-full h-auto rounded-md"

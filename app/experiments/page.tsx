@@ -8,13 +8,13 @@ export const metadata = {
 
 const experiments = [
   {
-    slug: 'limehome',
-    title: 'Limehome',
+    slug: 'in-room-tv',
+    title: 'In-room TV',
     description:
-      'An in-room TV prototype for unmanned serviced apartments: no menu, content indexed by stay phase, and a screen that behaves like a lamp before it behaves like a display.',
+      'A prototype for the in-room TV in unmanned serviced apartments: no menu, content indexed by stay phase, and a screen that behaves like a lamp before it behaves like a display.',
     year: '2026',
     location: 'Berlin',
-    image: '/images/limehome/limehome_intro.png',
+    image: '/images/in-room-tv/intro.png',
     tech: ['React', 'Vite', 'Tailwind', 'Claude Code'],
   },
   {
