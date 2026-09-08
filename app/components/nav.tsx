@@ -10,6 +10,9 @@ const navItems = {
   '/work': {
     name: 'work',
   },
+  '/experiments': {
+    name: 'experiments',
+  },
   '/blog': {
     name: 'blog',
   },
