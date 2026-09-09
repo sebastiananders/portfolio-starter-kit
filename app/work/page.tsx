@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { projects } from 'app/data/projects'
 
-const selectedIds = ['ava', 'MechOS', 'soham', 'identity', 'factory', 'zunder', 'stumble', 'firesite', 'noema', 'skytale']
+const selectedIds = ['ava', 'soham', 'identity', 'factory', 'zunder', 'stumble', 'firesite', 'noema', 'skytale']
 const selectedProjects = selectedIds
   .map((id) => projects.find((p) => p.id === id))
   .filter(Boolean) as typeof projects

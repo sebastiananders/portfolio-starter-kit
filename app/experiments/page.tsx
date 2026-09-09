@@ -6,8 +6,32 @@ export const metadata = {
   description: 'Prototypes, sketches, and side quests.',
 }
 
-const experiments = [
+type Experiment = {
+  key: string
+  title: string
+  description: string
+  year: string
+  location?: string
+  image: string
+  tech: string[]
+  slug?: string
+  figmaLink?: string
+}
+
+const experiments: Experiment[] = [
   {
+    key: 'greek',
+    slug: 'greek',
+    title: 'Greek',
+    description:
+      'Plan the shot cheaply in Blender with Claude via the Higgsfield Bridge, then hand the AI video model a previz it has to follow — instead of burning tokens discovering the composition.',
+    year: '2026',
+    location: 'Berlin',
+    image: '/images/greek/intro.png',
+    tech: ['Blender', 'Higgsfield Bridge', 'Claude', 'AI Video Gen'],
+  },
+  {
+    key: 'in-room-tv',
     slug: 'in-room-tv',
     title: 'In-room TV',
     description:
@@ -18,14 +42,16 @@ const experiments = [
     tech: ['React', 'Vite', 'Tailwind', 'Claude Code'],
   },
   {
-    slug: 'greek',
-    title: 'Greek',
+    key: 'mechos',
+    title: 'AI Agent Monitoring & Orchestrating',
     description:
-      'Plan the shot cheaply in Blender with Claude via the Higgsfield Bridge, then hand the AI video model a previz it has to follow — instead of burning tokens discovering the composition.',
+      "Watch and control your AI agents on mobile. With the computer now running on its own, people might feel the need to see what's going on.",
     year: '2026',
     location: 'Berlin',
-    image: '/images/greek/hero.png',
-    tech: ['Blender', 'Higgsfield Bridge', 'Claude', 'AI Video Gen'],
+    image: '/images/mechos/hero.png',
+    tech: ['Figma', 'Mobbin', 'Claude Code'],
+    figmaLink:
+      'https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1',
   },
 ]
 
@@ -54,7 +80,7 @@ export default function ExperimentsPage() {
             const isEven = index % 2 === 1
             const num = String(index + 1).padStart(2, '0')
             return (
-              <div key={experiment.slug} id={experiment.slug} className="py-16 group scroll-mt-8">
+              <div key={experiment.key} id={experiment.key} className="py-16 group scroll-mt-8">
                 <p className="text-[96px] font-bold leading-none text-neutral-100 dark:text-neutral-800 mb-2 select-none tabular-nums">
                   {num}
                 </p>
@@ -89,13 +115,25 @@ export default function ExperimentsPage() {
                         </span>
                       ))}
                     </div>
-                    <div>
-                      <Link
-                        href={`/experiments/${experiment.slug}`}
-                        className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
-                      >
-                        Read more →
-                      </Link>
+                    <div className="flex flex-wrap gap-5">
+                      {experiment.slug && (
+                        <Link
+                          href={`/experiments/${experiment.slug}`}
+                          className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
+                        >
+                          Read more →
+                        </Link>
+                      )}
+                      {experiment.figmaLink && (
+                        <a
+                          href={experiment.figmaLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-400 hover:decoration-neutral-700 dark:hover:decoration-neutral-300 transition-colors"
+                        >
+                          Figma →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
