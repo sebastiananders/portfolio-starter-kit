@@ -1,7 +1,11 @@
 export default function ProfileDetails() {
   return (
-    <div className="border-t border-neutral-200 dark:border-neutral-700 pt-6 mb-12">
-      <dl className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-3 text-sm">
+    <details className="border-t border-neutral-200 dark:border-neutral-700 pt-6 mb-4 group">
+      <summary className="flex items-center justify-between cursor-pointer list-none text-sm font-medium text-neutral-900 dark:text-neutral-100 select-none">
+        <span>Quick bio</span>
+        <span className="text-neutral-400 transition-transform duration-200 group-open:rotate-180" aria-hidden>▾</span>
+      </summary>
+      <dl className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-3 text-sm mt-6">
         <dt className="text-neutral-500 dark:text-neutral-400 font-medium">Experience</dt>
         <dd className="text-neutral-900 dark:text-neutral-100">15 years in digital products</dd>
 
@@ -26,6 +30,6 @@ export default function ProfileDetails() {
         <dt className="text-neutral-500 dark:text-neutral-400 font-medium">Award</dt>
         <dd className="text-neutral-900 dark:text-neutral-100">UN Habitat III CityVis (student category)</dd>
       </dl>
-    </div>
+    </details>
   )
 }

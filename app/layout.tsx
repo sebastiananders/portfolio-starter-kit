@@ -6,8 +6,9 @@ import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
-import AiChat from './components/ai-chat'
 import { baseUrl } from './sitemap'
+
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -54,22 +55,17 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased mt-8">
-        <main className="min-w-0 mt-6 flex flex-col pb-24">
+        <main className="min-w-0 mt-6 flex flex-col">
           <div className="max-w-xl mx-4 lg:mx-auto px-2 md:px-0">
             <Navbar />
           </div>
           {children}
-          <div className="max-w-xl mx-4 lg:mx-auto px-2 md:px-0">
+          <div className="w-[calc(100%-2rem)] max-w-xl mx-4 lg:mx-auto px-2 md:px-0">
             <Footer />
           </div>
           <Analytics />
           <SpeedInsights />
         </main>
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-black border-t border-neutral-200 dark:border-neutral-800">
-          <div className="max-w-xl mx-4 lg:mx-auto px-2 md:px-0 py-4">
-            <AiChat />
-          </div>
-        </div>
       </body>
     </html>
   )
