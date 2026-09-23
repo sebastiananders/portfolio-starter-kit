@@ -88,8 +88,8 @@ export default function ExperimentsPage() {
                 <p className="text-[96px] font-bold leading-none text-neutral-100 dark:text-neutral-800 mb-2 select-none tabular-nums">
                   {num}
                 </p>
-                <div className={`flex flex-col md:flex-row md:gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                  <div className={`md:w-[75%] flex-shrink-0 overflow-hidden rounded-lg mb-8 md:mb-0 ${isEven ? 'md:-mr-12' : 'md:-ml-12'}`}>
+                <div className={`flex flex-col md:flex-row md:gap-8 md:items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  <div className={`overflow-hidden rounded-lg mb-8 md:mb-0 md:w-3/5 md:min-w-0 md:flex md:justify-center md:items-center ${isEven ? 'md:-mr-12' : 'md:-ml-12'}`}>
                     {experiment.video ? (
                       <video
                         src={experiment.video}
@@ -99,7 +99,7 @@ export default function ExperimentsPage() {
                         muted
                         playsInline
                         aria-hidden="true"
-                        className="w-full max-h-[600px] object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                        className="block max-h-[600px] md:max-h-[580px] max-w-full w-auto h-auto group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     ) : (
                       <Image
@@ -107,11 +107,11 @@ export default function ExperimentsPage() {
                         alt={`${experiment.title} preview`}
                         width={900}
                         height={650}
-                        className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                        className="block max-h-[600px] md:max-h-[580px] max-w-full w-auto h-auto group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     )}
                   </div>
-                  <div className="flex flex-col justify-center min-w-0">
+                  <div className="flex flex-col justify-center min-w-0 md:w-2/5">
                     <h3 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2 leading-none">
                       {experiment.title}
                     </h3>

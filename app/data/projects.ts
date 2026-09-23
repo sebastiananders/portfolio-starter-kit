@@ -10,6 +10,7 @@ export interface Project {
   tech: string[]
   image?: string
   images?: string[]
+  video?: string
   comingSoon?: boolean
   categories: ('Design' | 'Prototyping' | 'Engineering' | 'Experiment')[]
 }
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     tech: ["Figma", "Mobbin", "Claude Code"],
     image: "/images/mechos/hero.png",
     images: ["/images/507_1x_shots_so.png", "/images/mechOS.png"],
+    video: "/videos/mechos.mp4",
     categories: ["Design", "Experiment"],
     figmaLink: "https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1"
   },
@@ -48,6 +50,7 @@ export const projects: Project[] = [
     tech: ["React", "Figma", "Claude Code"],
     image: "/images/Soham/hero.png",
     images: ["/images/Soham/hero.png", "/images/soham_token.png"],
+    video: "/videos/bizzabo.mp4",
     comingSoon: true,
     categories: ["Design", "Prototyping", "Engineering"],
   },
