@@ -21,7 +21,7 @@ export default function Page() {
 `}</p>
       <ThemeVideo />
       <p className="mb-6">
-      {`I design and develop features and products. Focusing on the scope by prototyping the ambiguous thing in a few days instead of arguing about it for three sprints. I write specs engineers actually build from, I close the design–engineering gap indefinitely. I am a product design engineer person who is deep in the trenches but always keeps the bigger picture`}</p>
+      {`Product designer with strong technical depth and visual craft. I understand how products get built, and I bring clear judgment and a point of view. AI-savvy in how I work, with an emphasis on speed and pragmatism. Most importantly: I'm a curious builder who loves this era.`}</p>
       {/* <ProfileDetails /> */}
       {/* <p className="mb-3">
       {`The internet is an ever changing space. AOL, IRC, Facebook, Web3, Metaverse, AI Agents.. yadda yadda. Change is constant. In my 15+ years of design experience, I know how to navigate product decisions and create compelling user experiences.
