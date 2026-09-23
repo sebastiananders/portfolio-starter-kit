@@ -121,6 +121,26 @@ export default function InRoomTvPage() {
 
       <section className="mb-16">
         <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+          In situ at Limehome
+        </h2>
+        <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
+          Running on the actual panel in a Limehome apartment — the operator whose stay-phase reality the prototype was built against.
+        </p>
+        <div className="-mx-2 md:mx-0">
+          <video
+            className="w-full h-auto rounded-md"
+            src="/videos/limehome.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
           Stay-phase surface
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">

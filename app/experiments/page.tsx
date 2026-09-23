@@ -13,6 +13,7 @@ type Experiment = {
   year: string
   location?: string
   image: string
+  video?: string
   tech: string[]
   slug?: string
   figmaLink?: string
@@ -28,6 +29,7 @@ const experiments: Experiment[] = [
     year: '2026',
     location: 'Berlin',
     image: '/images/greek/intro.png',
+    video: '/videos/greek/hero.mp4',
     tech: ['Blender', 'Higgsfield Bridge', 'Claude', 'AI Video Gen'],
   },
   {
@@ -39,6 +41,7 @@ const experiments: Experiment[] = [
     year: '2026',
     location: 'Berlin',
     image: '/images/in-room-tv/intro.png',
+    video: '/videos/limehome.mp4',
     tech: ['React', 'Vite', 'Tailwind', 'Claude Code'],
   },
   {
@@ -49,6 +52,7 @@ const experiments: Experiment[] = [
     year: '2026',
     location: 'Berlin',
     image: '/images/mechos/hero.png',
+    video: '/videos/mechos.mp4',
     tech: ['Figma', 'Mobbin', 'Claude Code'],
     figmaLink:
       'https://www.figma.com/design/cl13qkW4ypRbBc8rk6VaQ9/MechOS?node-id=0-1&t=fnSEJxmJHHkAYc1w-1',
@@ -86,13 +90,26 @@ export default function ExperimentsPage() {
                 </p>
                 <div className={`flex flex-col md:flex-row md:gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}>
                   <div className={`md:w-[75%] flex-shrink-0 overflow-hidden rounded-lg mb-8 md:mb-0 ${isEven ? 'md:-mr-12' : 'md:-ml-12'}`}>
-                    <Image
-                      src={experiment.image}
-                      alt={`${experiment.title} preview`}
-                      width={900}
-                      height={650}
-                      className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
-                    />
+                    {experiment.video ? (
+                      <video
+                        src={experiment.video}
+                        poster={experiment.image}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        aria-hidden="true"
+                        className="w-full max-h-[600px] object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    ) : (
+                      <Image
+                        src={experiment.image}
+                        alt={`${experiment.title} preview`}
+                        width={900}
+                        height={650}
+                        className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    )}
                   </div>
                   <div className="flex flex-col justify-center min-w-0">
                     <h3 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2 leading-none">
