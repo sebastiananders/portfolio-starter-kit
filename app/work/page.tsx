@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { projects } from 'app/data/projects'
 
-const selectedIds = ['MechOS', 'soham', 'ava', 'identity', 'factory', 'zunder', 'stumble', 'firesite', 'noema', 'skytale']
+const selectedIds = ['MechOS', 'soham', 'firesite', 'ava', 'identity', 'factory', 'zunder', 'stumble', 'noema', 'skytale']
 const selectedProjects = selectedIds
   .map((id) => projects.find((p) => p.id === id))
   .filter(Boolean) as typeof projects
@@ -104,6 +104,7 @@ export default function PortfolioPage() {
                         </span>
                       ))}
                     </div>
+                    {/* External project links hidden for now
                     {(project.link || project.caseStudyLink || project.figmaLink) && (
                       <div className="flex flex-wrap gap-5">
                         {project.link && (
@@ -138,6 +139,7 @@ export default function PortfolioPage() {
                         )}
                       </div>
                     )}
+                    */}
                   </div>
                 </div>
               </div>

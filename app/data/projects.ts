@@ -82,6 +82,7 @@ export const projects: Project[] = [
     link: "https://firesite.club",
     tech: ["Vercel", "React", "Tailwind", "Railway", "Postgres", "Docker"],
     image: "/images/firesite_promo.png",
+    video: "/videos/firesite.mp4",
     categories: ["Design", "Prototyping", "Engineering"]
   },
   {
