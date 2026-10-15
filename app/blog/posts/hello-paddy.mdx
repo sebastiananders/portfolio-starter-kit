@@ -1,0 +1,49 @@
+---
+title: 'Hello paddy'
+publishedAt: '2026-10-15'
+summary: 'My first weeks as founding designer at paddy: getting to know the product, building trust, and shipping two quick wins to make the UI simpler for teachers.'
+---
+
+I started at paddy. After my onboarding week in Bielefeld, I have a good sense of the product and the people building it. Next, I want to get to know the people using it. They rely on paddy, and I want to strengthen their trust in it and make using it a more positive experience.
+
+Alongside the many other topics I cover as founding designer, I started with some low-hanging fruit I noticed while using paddy myself. The first few improvements did not need a new round of research or discovery. Just me using the product, applying my experience, and checking the data where it was available.
+
+I put together a list of quick wins and started working through it. In my second week, I created two PRs.
+
+<Image
+  src="/images/hello-paddy/ticket-list.png"
+  alt="The paddy Quick wins UI issue list, including hiding the Live-Editor button and renaming Agent to Chat."
+  width={1588}
+  height={1238}
+/>
+
+## One less button
+
+The first PR was about a button on the start page, where the chat lives. There was a button called “Live-Editor” that triggered editing capabilities already available while chatting.
+
+The data suggested the button itself was barely used. Only 1 of 18 survey respondents said they had used “Live-Editor (Markdown / Canvas)”. Yet `createCanvasDoc` had 9,060 users and 55,674 calls, making it one of the most-used primitives.
+
+My reading: teachers are using the editor when a generation calls the tool, without necessarily clicking the Live-Editor button or knowing it by that name.
+
+To simplify the UI, I decided to hide the button. The editing capabilities are still there.
+
+## Calling the chat a chat
+
+The second PR was about consistent naming. A small change on the surface, but a big one for expectations.
+
+In the app, we called the chat “Agent”. But the Magic Chat works like a chat: the teacher asks, paddy answers, and sometimes a tool is called along the way. Calling it “Agent” promises more autonomy than it has.
+
+It also clashes with the things in paddy that really are agents: custom agents, voice agents, and agent avatars.
+
+I wanted the name to match what teachers actually experience, so the PR renamed the user-facing references to the chat. I did a quick assessment in plan mode first to keep the scope clear: labels and copy, with routes and internal identifiers left intact.
+
+<Image
+  src="/images/hello-paddy/agent-to-chat-pr.png"
+  alt="Pull request diff changing the displayed label from Agent to Chat while keeping the internal agent key unchanged."
+  width={1418}
+  height={384}
+/>
+
+These are small changes on the design and development side, but they are a first step towards improving the overall app. My goal is to make paddy super helpful for teachers and students while keeping the UI as simple as possible.
+
+#paddy
