@@ -13,7 +13,7 @@ export default function Page() {
         {`Sebastian Anders` }
       </p>
       <p className="lg:text-1xl text-neutral-600 dark:text-neutral-400">
-        {`Product Design Engineer` }
+        {`Design at paddy` }
       </p>
       <br></br>
       <p className="mb-6">

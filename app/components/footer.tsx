@@ -2,14 +2,19 @@ import { getGitHubContributions } from '../lib/github-contributions'
 import ContributionGrid from './contribution-grid'
 import './github-footer.css'
 
+// Keep the activity segment available to restore later.
+const SHOW_GITHUB_ACTIVITY = false
+
 export default async function Footer() {
-  const calendar = await getGitHubContributions().catch((error: unknown) => {
-    console.warn('GitHub footer unavailable:', error instanceof Error ? error.message : 'Unknown error')
-    return null
-  })
+  const calendar = SHOW_GITHUB_ACTIVITY
+    ? await getGitHubContributions().catch((error: unknown) => {
+        console.warn('GitHub footer unavailable:', error instanceof Error ? error.message : 'Unknown error')
+        return null
+      })
+    : null
   return (
-    <footer className="github-footer" aria-label="GitHub activity">
-      {calendar ? <ContributionGrid calendar={calendar} /> : <div className="github-calendar-fallback" />}
+    <footer className="github-footer" aria-label={SHOW_GITHUB_ACTIVITY ? 'GitHub activity and social links' : 'Social links'}>
+      {SHOW_GITHUB_ACTIVITY && (calendar ? <ContributionGrid calendar={calendar} /> : <div className="github-calendar-fallback" />)}
       <div className="flex gap-5 items-center justify-center mt-6">
         {/* Instagram */}
         <a href="https://www.instagram.com/_sebastiananders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
