@@ -1,0 +1,73 @@
+---
+title: 'October at paddy'
+publishedAt: '2026-11-16'
+summary: 'What I worked on in my first month as the founding product designer at paddy'
+author: 'Sebastian Anders'
+---
+
+At the start of October I joined paddy as founding product designer. paddy is an AI platform that wants to give teachers their time back. Founding designer at a small startup means one designer, a lot of surfaces, and a Figma file left by a predecessor I never met.
+
+This is a quick review of month one: five things I worked on, and what each one taught me.
+
+## Start with evidence, not taste
+
+A new designer wants to fix everything they see. I tried to fix what teachers had already told us about instead. paddy had a teacher survey and usage data showing which AI tools get called, and how often. I read both and pulled out changes that needed no backend work.
+
+That gave me seven small tickets, each tied to a finding: honest waiting and error states for slow tools, features people couldn't find, and labels that say what a thing actually does. Fixes like these are quick to ship, and they earn trust with teachers and with the team.
+
+## Know which calls are yours
+
+The team is rebuilding the agent harness: the layer that runs paddy's AI when a request needs several steps and tools. I went deep. I mapped every surface the rebuild touches, specced a code prototype, and drafted a decision record comparing two protocols for connecting the harness to the UI.
+
+Then our CTO left one comment: we're staying on the SDK we already use. Fair, and the protocol was never my call. My part is the contract from the UI side: which states a run can be in, when a teacher has to approve something, how progress shows, and what happens when a step fails. That's where design adds the most to infrastructure work.
+
+## A cancel flow without dark patterns
+
+We want to know why individual subscribers cancel. The lazy answer is a retention maze. We set rules instead:
+
+- Cancel first, then ask.
+- One question, and it's optional.
+- No guilt copy, no "are you sure?" detours.
+- Say plainly what the answers are used for.
+
+German law has specific rules for the cancel button and what may sit between it and the confirmation, so legal checked the approach before I designed anything. I built the flow as a clickable prototype in code, tuned the wording with the team, then split it into tickets. The front-end ones I'm building myself.
+
+<Image
+  src="/images/october-at-paddy/cancel-flow-prototype.png"
+  alt="The paddy cancellation-flow prototype showing a reason survey, a selected answer about result quality, optional follow-up feedback, and a button to continue to cancellation."
+  width={2590}
+  height={1808}
+/>
+
+## Draw the process, then test it
+
+A small team needs a shared picture of how design work moves. I sketched one in FigJam: noise → signals → framing → explore → prototype → test → measure → execute.
+
+Then I checked it against how the team actually works. It held up for big bets and broke as a model for everything else. Bug fixes needed their own fast lane. There was no moment where we decide to build before building starts. Success criteria came too late, and nothing fed results back into signals.
+
+I kept the simple core, added an iterate loop between prototype and test, and named roles instead of people. The process should outlast the current team.
+
+<Image
+  src="/images/october-at-paddy/design-process.png"
+  alt="A hand-drawn design process in FigJam, moving from noise through signals, framing, exploration, prototyping, testing, measurement, and execution, with notes about evidence and iteration."
+  width={4960}
+  height={2074}
+/>
+
+## Keep track without extra admin
+
+One designer across many areas means a lot of open loops. Linear stays the source of truth for tickets. Every morning, a scheduled agent copies their status onto a weekly Kanban board in Notion, and it opens a new page when the week turns. Another one turns the feedback teachers give in our trainings into a weekly summary. A single "Design update" page lists my areas and what's open in each.
+
+None of that is design work. It just keeps things from slipping.
+
+{/* [Screenshot] The weekly board in Notion. Clear with paddy before publishing. */}
+
+## Next up
+
+November brings the marketing website, which I'm rebuilding from scratch, and discovery on how teachers want to organise their materials and school documents. The harness work continues.
+
+Three things I'd tell myself on day one:
+
+1. Read the evidence before you design anything.
+2. Ask which decisions are yours before you write the decision record.
+3. Write the process down early, then test it against reality.
