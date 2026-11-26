@@ -1,0 +1,31 @@
+---
+title: 'Stand-up Companion: letting the tools remember yesterday'
+publishedAt: '2026-11-26'
+summary: 'A little app that turns my Codex, GitHub, Linear and Slack activity into a stand-up card I can actually check.'
+author: 'Sebastian Anders'
+---
+
+Every morning the same thing. Stand-up starts, someone asks "who's next?" and I try to remember what I did yesterday. A few PRs. Some Linear tickets. Long Codex sessions. Slack threads everywhere. It all happened, but it's scattered all over the place.
+
+So I built a little app for it: Stand-up Companion. It runs inside Claude or as a Mac app in the menu bar.
+
+<Image
+  src="/images/stand-up-companion/stand-up-companion.png"
+  alt="Stand-up Companion next to a video call. The app shows the stand-up card with a headline, Yesterday and Today points linked to their sources, a timeline of activity by source, and an Around you list of team updates. Names are anonymized."
+  width={1672}
+  height={941}
+/>
+
+How it works is pretty simple. It looks back to the start of my last workday and collects what happened in Codex, GitHub, Linear and Slack. My own stuff, plus what the team did during working hours. Then Claude turns this pile into a card.
+
+Yesterday: what I actually moved forward. Today: what I will probably do next. Blockers: only real ones. Plus a short "Around you" with what the team decided or shipped, and a script I can read out loud. 60 to 110 words. That's it.
+
+The most important part for me: every point on the card links back to where it came from. A commit, a ticket, a Slack message. If something sounds off, I check it with one click. No magic. No guessing.
+
+It also doesn't make things up. No blockers when there are none. No filler, no praise, no emoji. Honestly, nobody needs fluffy status updates.
+
+A few small things I like. Ctrl+Alt+S brings up the card from anywhere when it's my turn. There's a 90-second timer that changes color when I talk too long. Space switches between bullet points and script. For async days there's a "Copy for Slack" button. It speaks English and German. And on workdays it prepares everything at 8:45, before my first coffee.
+
+Is it perfect? Probably not. But I'd rather start my update from what actually happened than from whatever is left in my head. Let's see where it goes.
+
+Cheers
