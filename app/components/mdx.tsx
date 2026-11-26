@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { ZoomableImage } from './zoomable-image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
@@ -46,7 +46,11 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+  return <ZoomableImage optimized {...props} />
+}
+
+function MarkdownImage(props) {
+  return <ZoomableImage {...props} />
 }
 
 function YouTube({ id, title }: { id: string; title?: string }) {
@@ -109,6 +113,7 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: RoundedImage,
+  img: MarkdownImage,
   YouTube,
   a: CustomLink,
   code: Code,
